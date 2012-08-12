@@ -1,6 +1,4 @@
 set -o notify
-set -o noclobber
-set -o nounset
 
 shopt -s cdspell
 shopt -s checkhash
@@ -12,6 +10,7 @@ shopt -s no_empty_cmd_completion
 
 export HISTTIMEFORMAT="%H:%M > "
 export HISTIGNORE="&:bg:fg"
+export HISTCONTROL=ignoredups
 export PS1="\u@\h:\W\$ "
 
 export PAGER=`which less`
