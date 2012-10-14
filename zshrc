@@ -78,9 +78,6 @@ DIRSTACKSIZE=10
 MAIL=/var/mail/$USERNAME
 MAILCHECK=60
 
-# set colors for ls command
-eval `dircolors -b`
-
 # report login/logout events of all except ourself, once in every minute
 watch=(notme)
 LOGCHECK=60
@@ -88,9 +85,9 @@ WATCHFMT='%n %a %l from %m at %t.'
 
 # set prompt (red for root, cyan otherwise, display only the hostname and CWD)
 if ((EUID==0)); then
-	PROMPT=$'%{\e[0;31m%}%m%{\e[0;33m%}%B:%b%{\e[0;31m%}%B%1~%b%{\e[0;33m%}%#%{\e[0m%} '
+	PROMPT=$'%{\e[0;31m%}%n@%m%{\e[0;33m%}%B:%b%{\e[0;31m%}%B%1~%b%{\e[0;33m%}%#%{\e[0m%} '
 else
-	PROMPT=$'%{\e[0;36m%}%m%{\e[0;33m%}%B:%b%{\e[0;36m%}%B%1~%b%{\e[0;33m%}%#%{\e[0m%} '
+	PROMPT=$'%{\e[0;36m%}%n@%m%{\e[0;33m%}%B:%b%{\e[0;36m%}%B%1~%b%{\e[0;33m%}%#%{\e[0m%} '
 fi
 
 # don't ask 'do you wish to see all XX possibilities' before menu selection
