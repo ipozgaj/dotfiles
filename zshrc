@@ -25,7 +25,7 @@ umask 022
 # set limits
 unlimit			# user hard limits
 limit core 0		# no core dumps 
-limit maxproc 1024	# limit number of processes
+limit maxproc 2048	# limit number of processes
 limit stack 8192	# limit stack size
 limit -s		# use limits for this and child shells
 
@@ -61,10 +61,10 @@ bindkey "^Xf" insert-files
 
 # set shell history options
 HISTFILE=$HOME/.zhistory
-SAVEHIST=2000				# history file size
-HISTSIZE=2000				# internal history list size
+SAVEHIST=10000				# history file size
+HISTSIZE=5000				# internal history list size
 
-# maximum size of directory stack
+# size of directory stack
 DIRSTACKSIZE=10
 
 # set mail options
@@ -76,7 +76,7 @@ watch=(notme)
 LOGCHECK=60
 WATCHFMT='%n %a %l from %m at %t.'
 
-# set prompt (red for root, cyan otherwise, display only the hostname and CWD)
+# set prompt (red for root, cyan otherwise, format: user@machine:cwd)
 if ((EUID==0)); then
 	PROMPT=$'%{\e[0;31m%}%n@%m%{\e[0;33m%}%B:%b%{\e[0;31m%}%B%1~%b%{\e[0;33m%}%#%{\e[0m%} '
 else
@@ -89,7 +89,7 @@ LISTPROMPT=''
 # spelling prompt
 SPROMPT='zsh: correct '%R' to '%r' ? ([Y]es/[N]o/[E]dit/[A]bort) '
 
-# set common aliases
+# set aliases
 alias ls='ls -F --color=auto'
 alias l='ls'
 alias ll='ls -lh'
@@ -105,6 +105,7 @@ alias p='ps -fu $USER'
 alias h='history'
 alias quit='exit'
 alias vi='vim'
+alias grep='grep --color'
 
 # global aliases
 alias -g L='| less'
@@ -147,7 +148,7 @@ function src() {
 # auto logout after 30 idle minutes, unless on X
 TMOUT=1800
 case $TERM in
-	*xterm*|rxvt|(dt|k|E)term)
+	*xterm*|screen|rxvt|(dt|k|E)term)
 		unset TMOUT
 		;;
 esac
@@ -168,6 +169,12 @@ esac
 (( ${+TERM} )) || export TERM='vt100'
 (( ${+PAGER} )) || export PAGER=`which less`
 (( ${+EDITOR} )) || export EDITOR=`which vim`
+
+# tmux doesn't refresh environment on attach, so make sure we have right ssh-agent socket
+if [ "$SSH_AUTH_SOCK" != "/tmp/ssh-agent-$USER-tmux" ]; then
+	ln -sf $SSH_AUTH_SOCK /tmp/ssh-agent-$USER-tmux
+	export SSH_AUTH_SOCK="/tmp/ssh-agent-$USER-tmux"
+fi
 
 # color support for less
 export LESS_TERMCAP_mb=$'\E[01;31m'       # begin blinking-mode
@@ -221,7 +228,7 @@ users=(ipozgaj root)
 zstyle ':completion:*' users $users
 
 # common hostnames
-hosts=(fly.srk.fer.hr localhost)
+hosts=(localhost)
 zstyle ':completion:*' hosts $hosts
 
 # (user,host) pairs
