@@ -1,0 +1,14 @@
+[user]
+	name = Igor Pozgaj
+	email = ipozgaj@gmail.com
+
+[color]
+	ui = true
+
+[alias]
+    st = status
+    ci = commit
+    co = checkout
+    br = branch
+    lg = log --pretty=oneline --abbrev-commit --decorate
+    lgg = log --pretty=oneline --abbrev-commit --decorate --graph
