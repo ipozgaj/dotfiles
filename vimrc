@@ -10,5 +10,7 @@ set hlsearch
 
 set autoindent
 
+set modeline
+
 syntax on
 colorscheme evening
