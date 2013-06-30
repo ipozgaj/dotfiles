@@ -6,9 +6,11 @@
 	ui = true
 
 [alias]
-    st = status
+    br = branch
     ci = commit
     co = checkout
-    br = branch
+    df = diff
     lg = log --pretty=oneline --abbrev-commit --decorate
     lgg = log --pretty=oneline --abbrev-commit --decorate --graph
+    sh = show
+    st = status
