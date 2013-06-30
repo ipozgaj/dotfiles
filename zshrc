@@ -176,15 +176,6 @@ export LESS_TERMCAP_ue=$'\E[0m'           # end underline
 # customize ls colors
 export LS_COLORS='di=01;34'
 
-# turn on advanced completion system
-if [[ "$ZSH_VERSION" == (3.1|4)* ]]; then
-	autoload -U compinit
-	compinit -C
-else
-	print "Advanced completion system not found; ignoring zstyle settings."
-	function zstyle { }
-fi
-
 # use menu selection
 zmodload -i zsh/complist
 
