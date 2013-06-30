@@ -1,8 +1,8 @@
 #################################################################
 # Z Shell zshrc file                                            #
 #                                                               #
-# (C) Igor Pozgaj <ipozgaj@fly.srk.fer.hr>                      #
-# Last modified: 11/15/2012                                     #
+# (C) Igor Pozgaj <ipozgaj@gmail.com>                           #
+# Last modified: 06/29/2013                                     #
 #################################################################
 
 # set paths
@@ -106,18 +106,6 @@ alias h='history'
 alias quit='exit'
 alias vi='vim'
 alias grep='grep --color'
-
-# global aliases
-alias -g L='| less'
-alias -g H='| head'
-alias -g T='| tail'
-alias -g G='| grep'
-alias -g S='| sort'
-alias -g SR='| sort -r'
-alias -g SN='| sort -n'
-alias -g SNR='| sort -n -r'
-alias -g W='| wc -l'
-alias -g N='&>/dev/null'
 
 # display sizes in human readable format
 alias du='du -h'
