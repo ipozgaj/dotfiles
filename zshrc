@@ -106,6 +106,7 @@ alias h='history'
 alias quit='exit'
 alias vi='vim'
 alias grep='grep --color'
+alias tmux="tmux attach || tmux new"
 
 # display sizes in human readable format
 alias du='du -h'
@@ -131,6 +132,12 @@ function src() {
 	[ -f ~/.zshrc.zwc.old ] && rm -f ~/.zshrc.zwc.old
 	[ -f ~/.zcompdump.zwc.old ] && rm -f ~/.zcompdump.zwc.old
 	source ~/.zshrc
+}
+
+# ssh server as root
+function sshr()
+{
+    ssh -l root $1
 }
 
 # auto logout after 30 idle minutes, unless on X
