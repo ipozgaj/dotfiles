@@ -106,6 +106,8 @@ alias h='history'
 alias quit='exit'
 alias vi='vim'
 alias grep='grep --color'
+alias egrep='egrep --color'
+alias fgrep='fgrep --color'
 alias tmux="tmux attach || tmux new"
 
 # display sizes in human readable format
