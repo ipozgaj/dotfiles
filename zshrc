@@ -83,6 +83,16 @@ if ((EUID==0)); then
     PROMPT="%{$fg[red]%}%n@%m%{$fg_bold[yellow]%}:%{$fg[red]%}%1~%{$fg_no_bold[yellow]%}# %{$reset_color%}"
 else
     PROMPT="%{$fg[cyan]%}%n@%m%{$fg_bold[yellow]%}:%{$fg[cyan]%}%1~%{$fg_no_bold[yellow]%}# %{$reset_color%}"
+
+    # add RPROMPT with git branch name if we're in git repo
+    setopt prompt_subst
+    git_get_branch() { git symbolic-ref HEAD 2>/dev/null | cut -d'/' -f3- }
+    git_prompt_string() {
+        branch=$(git_get_branch)
+        [ -n "$branch" ] || return
+        echo "%{$fg[yellow]%}[%{$fg[cyan]%}$branch%{$fg[yellow]%}]%{$reset_color%}"
+    }
+    RPROMPT='$(git_prompt_string)'
 fi
 
 # don't ask 'do you wish to see all XX possibilities' before menu selection
