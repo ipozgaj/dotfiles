@@ -14,3 +14,6 @@ set modeline
 
 syntax on
 colorscheme evening
+
+:highlight ExtraWhitespace ctermbg=red guibg=red
+:match ExtraWhitespace /\s\+\%#\@<!$/
