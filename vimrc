@@ -9,6 +9,7 @@ set incsearch
 set hlsearch
 
 set autoindent
+set showmatch
 
 set modeline
 
