@@ -6,7 +6,7 @@
 #################################################################
 
 # set paths
-path=($path /bin /usr/bin /usr/local/bin /usr/X11R6/bin $HOME/bin) 
+path=($path /bin /usr/bin /usr/local/bin /usr/X11R6/bin $HOME/bin)
 manpath=($manpath /usr/local/man /usr/share/man)
 cdpath=($cdpath ~)
 fpath=($fpath ~/.zfunc)
@@ -24,7 +24,7 @@ umask 022
 
 # set limits
 unlimit			# user hard limits
-limit core 0		# no core dumps 
+limit core 0		# no core dumps
 limit maxproc 2048	# limit number of processes
 limit stack 8192	# limit stack size
 limit -s		# use limits for this and child shells
@@ -41,7 +41,7 @@ bindkey "^[[7~" beginning-of-line	# Home
 bindkey "^[[8~" end-of-line		# End
 bindkey "^[[A" up-line-or-search	# back-history-search on up arrow
 bindkey "^[[B" down-line-or-search	# fwd-history-search on down arrow
-bindkey "^[e" expand-cmd-path		# expand command name on C-e 
+bindkey "^[e" expand-cmd-path		# expand command name on C-e
 bindkey " " magic-space			# history expansion on space
 
 # edit current command line
