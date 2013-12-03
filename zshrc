@@ -61,8 +61,8 @@ bindkey "^Xf" insert-files
 
 # set shell history options
 HISTFILE=$HOME/.zhistory
-SAVEHIST=10000				# history file size
-HISTSIZE=5000				# internal history list size
+SAVEHIST=50000				# history file size
+HISTSIZE=20000				# internal history list size
 
 # size of directory stack
 DIRSTACKSIZE=10
