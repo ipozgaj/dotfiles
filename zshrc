@@ -232,9 +232,12 @@ setopt correct			# correct misspelled commands
 setopt correct_all		# correct misspelled arguments
 setopt glob_complete		# set complete globing
 setopt extended_glob		# set extended globing
+setopt extendedhistory          # save timestamps and elapsed time in history file
 setopt hist_find_no_dups	# do not show duplicates on history-find
+setopt hist_ignore_all_dups     # ignore duplicates in history file
 setopt hist_reduce_blanks	# remove superfluous blanks from history file
 setopt hist_verify		# do not execute history expansion, load it only
+setopt hist_ignore_space        # do not save commands starting with space
 setopt inc_append_history	# write entries to history files incrementaly
 setopt null_glob		# delete word if no match is found
 setopt mail_warning		# warn if mail file was accessed from last login
