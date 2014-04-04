@@ -14,7 +14,7 @@ set showmatch
 set modeline
 
 syntax on
-colorscheme evening
+set background=dark
 
 " show whitespaces at the end of lines
 :highlight ExtraWhitespace ctermbg=red guibg=red
