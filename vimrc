@@ -8,7 +8,7 @@ set nobackup
 set incsearch
 set hlsearch
 
-set autoindent
+set cindent
 set showmatch
 
 set modeline
