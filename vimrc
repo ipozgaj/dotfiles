@@ -26,7 +26,7 @@ set scrolljump=5                    " scroll five lines at a time vertically
 set sidescroll=10                   " minumum columns to scroll horizontally
 
 " search
-set nohlsearch                      " don't persist search highlighting
+set hlsearch                        " highlight search words
 set incsearch                       " search with typeahead
 
 " misc
