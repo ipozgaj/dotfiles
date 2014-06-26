@@ -96,10 +96,6 @@ alias ll='ls -lh'
 alias la='ls -a'
 alias lla='ls -alh'
 alias lsd='ls -ld *(-/DN)'
-alias cp='nocorrect cp'
-alias mv='nocorrect mv'
-alias rm='nocorrect rm'
-alias mkdir='nocorrect mkdir'
 alias j='jobs -l'
 alias p='ps -fu $USER'
 alias h='history'
@@ -229,7 +225,6 @@ setopt auto_cd			# chdir to directory if we type its name only
 setopt auto_pushd		# put directory on dir stack after chdir
 setopt pushd_ignore_dups	# do not place duplicates on directory stack
 setopt correct			# correct misspelled commands
-setopt correct_all		# correct misspelled arguments
 setopt glob_complete		# set complete globing
 setopt extended_glob		# set extended globing
 setopt extendedhistory          # save timestamps and elapsed time in history file
