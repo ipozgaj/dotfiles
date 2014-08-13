@@ -110,7 +110,7 @@ alias tmux="tmux attach || tmux new"
 alias du='du -h'
 alias df='df -h'
 
-# sufix aliases
+# global aliases
 alias -g ...='../..'
 alias -g ...='../../..'
 alias -g ....='../../../..'
