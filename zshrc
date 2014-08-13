@@ -110,6 +110,11 @@ alias tmux="tmux attach || tmux new"
 alias du='du -h'
 alias df='df -h'
 
+# sufix aliases
+alias -g ...='../..'
+alias -g ...='../../..'
+alias -g ....='../../../..'
+
 # extra safety for root
 if ((EUID==0)); then
 	alias rm='rm -i'
