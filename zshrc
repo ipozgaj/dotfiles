@@ -112,8 +112,8 @@ alias df='df -h'
 
 # global aliases
 alias -g ...='../..'
-alias -g ...='../../..'
-alias -g ....='../../../..'
+alias -g ....='../../..'
+alias -g .....='../../../..'
 
 # extra safety for root
 if ((EUID==0)); then
