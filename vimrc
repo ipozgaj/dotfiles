@@ -5,6 +5,10 @@ set nocompatible
 syntax enable
 set background=dark
 
+" cursor line highlightning (requires TERM that supports 256 colors)
+set cursorline
+hi CursorLine ctermbg=233 cterm=none
+
 " indent style
 set autoindent                      " carry indent over to new lines
 set tabstop=4                       " four spaces per tab
@@ -26,7 +30,7 @@ set scrolljump=5                    " scroll five lines at a time vertically
 set sidescroll=10                   " minumum columns to scroll horizontally
 
 " search
-set hlsearch                        " highlight search words
+set hlsearch                        " highlight seach words
 set incsearch                       " search with typeahead
 
 " misc
@@ -37,7 +41,6 @@ set undolevels=1000                 " number of undos stored
 set viminfo='50,"50                 " '=marks for x files, "=registers for x files
 set modelines=0                     " turn off modelines
 set nobackup                        " don't create backups when overwriting files
-
 
 " show whitespaces at the end of lines
 :highlight ExtraWhitespace ctermbg=red guibg=red
