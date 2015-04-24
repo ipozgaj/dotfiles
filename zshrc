@@ -106,6 +106,19 @@ alias egrep='egrep --color'
 alias fgrep='fgrep --color'
 alias tmux="tmux attach || tmux new"
 
+# sufix aliases
+# global aliases
+alias -g L='| less'
+alias -g H='| head'
+alias -g T='| tail'
+alias -g G='| grep'
+alias -g S='| sort'
+alias -g SR='| sort -r'
+alias -g SN='| sort -n'
+alias -g SNR='| sort -n -r'
+alias -g W='| wc -l'
+alias -g N='&>/dev/null'
+
 # display sizes in human readable format
 alias du='du -h'
 alias df='df -h'
