@@ -65,7 +65,7 @@ SAVEHIST=50000				# history file size
 HISTSIZE=20000				# internal history list size
 
 # size of directory stack
-DIRSTACKSIZE=10
+DIRSTACKSIZE=20
 
 # set mail options
 MAIL=/var/mail/$USERNAME
