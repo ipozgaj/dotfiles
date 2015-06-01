@@ -21,10 +21,12 @@ deborphan
 diffutils
 dmidecode
 dnsutils
+dpkg-dev
 dsniff
 dstat
 ethtool
 exuberant-ctags
+fakeroot
 file
 findutils
 fio
@@ -81,6 +83,7 @@ parallel
 patch
 perl
 php5-cli
+pigz
 psmisc
 pv
 pyflakes
@@ -92,13 +95,16 @@ python3
 python3-numpy
 python3-scipy
 recode
+rpm
 rsync
 ruby
+schedtool
 sed
 socat
 splint
 sqlite3
 strace
+stunnel
 sudo
 sysstat
 systemtap
