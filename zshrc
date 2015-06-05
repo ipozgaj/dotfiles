@@ -59,6 +59,11 @@ autoload -U insert-files
 zle -N insert-files
 bindkey "^Xf" insert-files
 
+# magically expand multiple dots to ../ syntax (e.g. ... -> ../..)
+rationalise-dot() { if [[ $LBUFFER = *.. ]]; then LBUFFER+=/.. else LBUFFER+=.  fi }
+zle -N rationalise-dot
+bindkey . rationalise-dot
+
 # set shell history options
 HISTFILE=$HOME/.zhistory
 SAVEHIST=50000				# history file size
@@ -89,7 +94,7 @@ LISTPROMPT=''
 # spelling prompt
 SPROMPT='zsh: correct '%R' to '%r' ? ([Y]es/[N]o/[E]dit/[A]bort) '
 
-# set aliases
+# command aliases
 alias ls='ls -F --color=auto'
 alias l='ls'
 alias ll='ls -lh'
@@ -106,15 +111,7 @@ alias egrep='egrep --color'
 alias fgrep='fgrep --color'
 alias tmux="tmux attach || tmux new"
 
-
-# display sizes in human readable format
-alias du='du -h'
-alias df='df -h'
-
-# sufix aliases
-alias -g ...='../..'
-alias -g ....='../../..'
-alias -g .....='../../../..'
+# global aliases
 alias -g ND='*(/om[1])'         # newest directory in CWD
 alias -g NF='*(.om[1])'         # newest file in CWD
 
@@ -205,7 +202,7 @@ zstyle ':completion:*' menu select=long
 zstyle ':completion:*' matcher-list 'm:{a-z}={A-Z}'
 zstyle ':completion:*:*:-subscript-:*' tag-order indexes parameters
 zstyle ':completion:*:expand:*' tag-order all-expansions
-zstyle ':completion::complete:*' use-cache 1
+zstyle ':completion::complete:*' use-cache on
 zstyle ':completion::complete:*' cache-path ~/.zcompcache/$HOST
 zstyle ':completion:*' list-colors ${(s.:.)LS_COLORS}
 zstyle ':completion:*:processes' command 'ps -au$USER'
