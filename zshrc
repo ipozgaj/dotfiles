@@ -1,9 +1,5 @@
-#################################################################
-# Z Shell zshrc file                                            #
-#                                                               #
-# (C) Igor Pozgaj <ipozgaj@gmail.com>                           #
-# Last modified: 06/29/2013                                     #
-#################################################################
+# zshrc
+# (C) Igor Pozgaj <ipozgaj@gmail.com>
 
 # set paths
 path=($path /bin /usr/bin /usr/local/bin /usr/X11R6/bin $HOME/bin)
@@ -228,18 +224,19 @@ zstyle ':completion:*:my-accounts' users-hosts $my_accounts
 setopt always_to_end		# when completing from middle, move to end
 setopt auto_cd			# chdir to directory if we type its name only
 setopt auto_pushd		# put directory on dir stack after chdir
-setopt pushd_ignore_dups	# do not place duplicates on directory stack
 setopt correct			# correct misspelled commands
-setopt glob_complete		# set complete globing
 setopt extended_glob		# set extended globing
-setopt extendedhistory          # save timestamps and elapsed time in history file
+setopt extended_history         # save timestamps and elapsed time in history file
+setopt glob_complete		# do not expand globs to list of matched files, use completion
+setopt hist_expire_dups_first   # when trimming history, remove oldest duplicates first
 setopt hist_find_no_dups	# do not show duplicates on history-find
 setopt hist_ignore_all_dups     # ignore duplicates in history file
+setopt hist_ignore_space        # do not save commands starting with space
 setopt hist_reduce_blanks	# remove superfluous blanks from history file
 setopt hist_verify		# do not execute history expansion, load it only
-setopt hist_ignore_space        # do not save commands starting with space
 setopt inc_append_history	# write entries to history files incrementaly
-setopt null_glob		# delete word if no match is found
+setopt interactive_comments     # allow comments in interractive shells
 setopt mail_warning		# warn if mail file was accessed from last login
-setopt nobeep			# prevent beeps
-unsetopt null_glob		# prevent expanding of non matched globs to *
+setopt no_beep			# prevent beeps
+setopt no_null_glob		# prevent expanding of non matched globs to *
+setopt pushd_ignore_dups	# do not place duplicates on directory stack
