@@ -62,8 +62,8 @@ bindkey . rationalise-dot
 
 # set shell history options
 HISTFILE=$HOME/.zhistory
-SAVEHIST=50000				# history file size
-HISTSIZE=20000				# internal history list size
+SAVEHIST=100000				# history file size
+HISTSIZE=50000				# internal history list size
 
 # size of directory stack
 DIRSTACKSIZE=20
