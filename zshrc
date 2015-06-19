@@ -133,12 +133,6 @@ function src() {
 	source ~/.zshrc
 }
 
-# ssh server as root
-function sshr()
-{
-    ssh -l root $1
-}
-
 # auto logout after 30 idle minutes, unless on X
 TMOUT=1800
 case $TERM in
@@ -166,6 +160,7 @@ esac
 
 # tmux doesn't refresh environment on attach, so make sure we have right ssh-agent socket
 if [ "$SSH_AUTH_SOCK" != "/tmp/ssh-agent-$USER-tmux" ]; then
+    [ -z $SSH_AUTH_SOCK ] && eval $(ssh-agent)
 	ln -sf $SSH_AUTH_SOCK /tmp/ssh-agent-$USER-tmux
 	export SSH_AUTH_SOCK="/tmp/ssh-agent-$USER-tmux"
 fi
