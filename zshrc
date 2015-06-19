@@ -13,7 +13,7 @@ if ((EUID==0)); then
 fi
 
 # remove duplicate entries from paths
-typeset -U path manpath cdpath fpath
+typeset -Ug path manpath cdpath fpath
 
 # set umask
 umask 022
