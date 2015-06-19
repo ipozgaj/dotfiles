@@ -78,10 +78,11 @@ LOGCHECK=60
 WATCHFMT='%n %a %l from %m at %t.'
 
 # set prompt (red for root, cyan otherwise, format: user@machine:cwd)
+autoload -U colors && colors
 if ((EUID==0)); then
-	PROMPT=$'%{\e[0;31m%}%n@%m%{\e[0;33m%}%B:%b%{\e[0;31m%}%B%1~%b%{\e[0;33m%}%#%{\e[0m%} '
+    PROMPT="%{$fg[red]%}%n@%m%{$fg_bold[yellow]%}:%{$fg_bold[red]%}%1~%{$reset_color%}%{$fg[yellow]%}%#%{$reset_color%} "
 else
-	PROMPT=$'%{\e[0;36m%}%n@%m%{\e[0;33m%}%B:%b%{\e[0;36m%}%B%1~%b%{\e[0;33m%}%#%{\e[0m%} '
+    PROMPT="%{$fg[cyan]%}%n@%m%{$fg_bold[yellow]%}:%{$fg_bold[cyan]%}%1~%{$reset_color%}%{$fg[yellow]%}%#%{$reset_color%} "
 fi
 
 # don't ask 'do you wish to see all XX possibilities' before menu selection
