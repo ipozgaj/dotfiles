@@ -106,7 +106,6 @@ alias vi='vim'
 alias grep='grep --color'
 alias egrep='egrep --color'
 alias fgrep='fgrep --color'
-alias tmux="tmux attach || tmux new"
 
 # global aliases
 alias -g ND='*(/om[1])'         # newest directory in CWD
@@ -143,7 +142,7 @@ function sshr()
 # auto logout after 30 idle minutes, unless on X
 TMOUT=1800
 case $TERM in
-	*xterm*|screen|rxvt|(dt|k|E)term)
+	*xterm*|screen|rxvt|(dt|k|E|a)term)
 		unset TMOUT
 		;;
 esac
