@@ -106,6 +106,7 @@ sqlite3
 strace
 stunnel
 sudo
+sysdig
 sysstat
 systemtap
 tar
