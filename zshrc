@@ -2,7 +2,7 @@
 # (C) Igor Pozgaj <ipozgaj@gmail.com>
 
 # set paths
-path=($path /bin /usr/bin /usr/local/bin /usr/X11R6/bin $HOME/bin)
+path=($path /bin /usr/bin /usr/local/bin $HOME/bin)
 manpath=($manpath /usr/local/man /usr/share/man)
 cdpath=($cdpath ~)
 fpath=($fpath ~/.zfunc)
