@@ -33,6 +33,10 @@ set sidescroll=10                   " minumum columns to scroll horizontally
 set hlsearch                        " highlight seach words
 set incsearch                       " search with typeahead
 
+" splits
+set splitbelow                      " open new split pane to bottom
+set splitright                      " open new vsplit pane to right
+
 " misc
 set noerrorbells                    " no bells in terminal
 set backspace=indent,eol,start      " backspace over everything
