@@ -116,6 +116,7 @@ time
 tmux
 trace-cmd
 traceroute
+tshark
 unzip
 valgrind
 vim
