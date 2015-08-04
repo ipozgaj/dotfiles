@@ -1,0 +1,9 @@
+IdentitiesOnly yes
+
+Host github.com
+    IdentityFile ~/.ssh/github-ipozgaj
+
+Host vmubuntu
+    HostName 192.168.1.0
+    IdentityFile ~/.ssh/vmubuntu-ipozgaj
+    ForwardAgent yes
