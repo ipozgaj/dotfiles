@@ -162,13 +162,6 @@ esac
 (( ${+PAGER} )) || export PAGER=`which less`
 (( ${+EDITOR} )) || export EDITOR=`which vim`
 
-# tmux doesn't refresh environment on attach, so make sure we have right ssh-agent socket
-if [ "$SSH_AUTH_SOCK" != "/tmp/ssh-agent-$USER-tmux" ]; then
-    [ -z $SSH_AUTH_SOCK ] && eval $(ssh-agent)
-	ln -sf $SSH_AUTH_SOCK /tmp/ssh-agent-$USER-tmux
-	export SSH_AUTH_SOCK="/tmp/ssh-agent-$USER-tmux"
-fi
-
 # color support for less
 export LESS_TERMCAP_mb=$'\E[01;31m'       # begin blinking-mode
 export LESS_TERMCAP_md=$'\E[01;38;5;74m'  # begin bold-mode
