@@ -11,8 +11,8 @@
     co = checkout
     ci = commit
     df = diff
-    lg = log --pretty=oneline --abbrev-commit --decorate
-    lgg = log --pretty=oneline --abbrev-commit --decorate --graph
+    lg = log --oneline --decorate
+    lgg = log --pretty=format:'%Cred%h %C(yellow)%d %Cgreen(%cr) %C(bold blue)<%an>%Creset %s' --graph --abbrev-commit --date=relative --all
     rb = rebase
     sh = show
     st = status
