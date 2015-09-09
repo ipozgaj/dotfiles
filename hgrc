@@ -1,0 +1,12 @@
+[ui]
+username = Igor Pozgaj <ipozgaj@fb.com>
+
+[extensions]
+hgext.extdiff =
+
+[extdiff]
+cmd.vimdiff =
+
+[alias]
+vi  = vimdiff
+vim = vimdiff
