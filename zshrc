@@ -60,10 +60,6 @@ rationalise-dot() { if [[ $LBUFFER = *.. ]]; then LBUFFER+=/.. else LBUFFER+=.  
 zle -N rationalise-dot
 bindkey . rationalise-dot
 
-# set backward-kill-word to stop on everything other than alphanumerics
-autoload -U select-word-style
-select-word-style bash
-
 # set shell history options
 HISTFILE=$HOME/.zhistory
 SAVEHIST=100000				# history file size
