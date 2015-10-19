@@ -168,7 +168,15 @@ export LESS_TERMCAP_us=$'\E[04;38;5;146m' # begin underline
 export LESS_TERMCAP_ue=$'\E[0m'           # end underline
 
 # customize ls colors
-export LS_COLORS='di=01;34'
+case $(uname) in
+    Darwin)
+        export CLICOLOR=1
+        export LSCOLORS=ExFxCxDxBxegedabagacad
+        ;;
+    Linux)
+        eval $(dircolors -b)
+        ;;
+esac
 
 # setup completion
 autoload -U compinit && compinit
