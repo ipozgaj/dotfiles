@@ -80,9 +80,9 @@ WATCHFMT='%n %a %l from %m at %t.'
 # set prompt (red for root, cyan otherwise, format: user@machine:cwd)
 autoload -U colors && colors
 if ((EUID==0)); then
-    PROMPT="$fg[red]%n@%m$fg_bold[yellow]:$fg_bold[red]%1~$reset_color$fg[yellow]%#$reset_color "
+    PROMPT="%{$fg[red]%}%n@%m%{$fg_bold[yellow]%}:%{$fg_bold[red]%}%1~%{$reset_color%}%{$fg[yellow]%}%#%{$reset_color%} "
 else
-    PROMPT="$fg[cyan]%n@%m$fg_bold[yellow]:$fg_bold[cyan]%1~$reset_color$fg[yellow]%#$reset_color "
+    PROMPT="%{$fg[cyan]%}%n@%m%{$fg_bold[yellow]%}:%{$fg_bold[cyan]%}%1~%{$reset_color%}%{$fg[yellow]%}%#%{$reset_color%} "
 fi
 
 # don't ask 'do you wish to see all XX possibilities' before menu selection
