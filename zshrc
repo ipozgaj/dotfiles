@@ -29,6 +29,7 @@ limit -s		# use limits for this and child shells
 bindkey -e
 
 # common key bindings
+bindkey "^U" backward-kill-line         # make CTRL-U behave like in bash
 bindkey "^[[2~" yank			# Insert
 bindkey "^[[3~" delete-char		# Delete
 bindkey "^[[5~" up-line-or-history	# Page Up
