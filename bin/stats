@@ -1,0 +1,36 @@
+#!/bin/bash
+# (C) 2015 Igor Pozgaj <ipozgaj@gmail.com>
+# prints basic descriptive statistics data for numbers on stding
+
+(
+  echo "count range avg std var min p1 p2 p5 p10 p25 p50 p90 p95 p99 max"
+
+  sort -n | awk '
+      BEGIN { sum = 0 ; variance = 0 }
+      NR == 1 { min = $1; max = $1 }
+      NR > 1 && $1 < min { min = $1 }
+      NR > 1 && $1 > max { max = $1 }
+      {
+        sum += $1;
+        s[NR - 1] = $1;
+      } END {
+        avg = sum / NR;
+        for (i=0 ; i<NR ; i++) { variance += (s[i] - avg)^2 / NR };
+        print NR,
+        max - min,
+        avg,
+        sqrt(variance),
+        variance,
+        min,
+        s[int(NR*0.01-0.5)],
+        s[int(NR*0.02-0.5)],
+        s[int(NR*0.05-0.5)],
+        s[int(NR*0.10-0.5)],
+        s[int(NR*0.25-0.5)],
+        s[int(NR*0.50-0.5)],
+        s[int(NR*0.90-0.5)],
+        s[int(NR*0.95-0.5)],
+        s[int(NR*0.99-0.5)],
+        max
+  }'
+) | column -t
