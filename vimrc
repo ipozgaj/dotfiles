@@ -57,3 +57,6 @@ set nobackup                        " don't create backups when overwriting file
 " map gp and gnp to set paste/nopaste
 :nmap gp :set paste<CR>
 :nmap gnp :set nopaste<CR>
+
+" custom syntax highlighting
+au BufRead,BufNewFile *.json set ft=javascript
