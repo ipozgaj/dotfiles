@@ -60,3 +60,6 @@ set nobackup                        " don't create backups when overwriting file
 
 " custom syntax highlighting
 au BufRead,BufNewFile *.json set ft=javascript
+
+" do not expand tabs to spaces in makefiles
+autocmd FileType make setlocal noexpandtab
