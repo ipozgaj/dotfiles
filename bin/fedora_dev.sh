@@ -145,6 +145,7 @@ dnf install \
     util-linux \
     valgrind \
     vim \
+    vmtouch \
     wget \
     which \
     whois \
