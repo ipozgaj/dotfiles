@@ -19,6 +19,7 @@ dnf install \
     cpio \
     cpp \
     cppcheck \
+    cpuid \
     cracklib \
     cronie \
     cronie-anacron \
