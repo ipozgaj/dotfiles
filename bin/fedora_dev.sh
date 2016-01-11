@@ -137,6 +137,7 @@ dnf install \
     tar \
     tcpdump \
     telnet \
+    the_silver_searcher \
     time \
     tmux \
     trace-cmd \
