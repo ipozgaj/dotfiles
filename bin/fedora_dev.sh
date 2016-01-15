@@ -101,6 +101,7 @@ dnf install \
     parallel \
     parted \
     patch \
+    pcre-tools \
     perf \
     perl \
     php-cli \
