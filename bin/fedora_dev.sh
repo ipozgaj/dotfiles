@@ -115,6 +115,7 @@ dnf install \
     python \
     python3 \
     python-ipython-console \
+    python-scrapy \
     recode \
     rpm \
     rsync \
