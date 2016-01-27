@@ -109,7 +109,6 @@ dnf install \
     procps-ng \
     psacct \
     psmisc \
-    psmisc \
     pv \
     pyflakes \
     python \
