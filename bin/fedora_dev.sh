@@ -104,7 +104,6 @@ dnf install \
     pcre-tools \
     perf \
     perl \
-    php-cli \
     pigz \
     procps-ng \
     psacct \
