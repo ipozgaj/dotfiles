@@ -60,11 +60,6 @@ autoload -U insert-files
 zle -N insert-files
 bindkey "^Xf" insert-files
 
-# magically expand multiple dots to ../ syntax (e.g. ... -> ../..)
-rationalise-dot() { if [[ $LBUFFER = *.. ]]; then LBUFFER+=/.. else LBUFFER+=.  fi }
-zle -N rationalise-dot
-bindkey . rationalise-dot
-
 # set shell history options
 HISTFILE=$HOME/.zhistory
 SAVEHIST=100000				# history file size
