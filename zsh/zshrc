@@ -88,15 +88,15 @@ LISTPROMPT=''
 SPROMPT='zsh: correct '%R' to '%r' ? ([Y]es/[N]o/[E]dit/[A]bort) '
 
 # command aliases
-alias ls='ls -F --color=auto'
 alias l='ls'
+alias ls='ls -F --color=auto'
 alias ll='ls -lh'
 alias la='ls -a'
 alias lla='ls -alh'
 alias lsd='ls -ld *(-/DN)'
 alias j='jobs -l'
 alias p='ps -fu $USER'
-alias h='history'
+alias h='history -fD'
 alias quit='exit'
 alias vi='vim'
 alias grep='grep --color'
@@ -104,6 +104,24 @@ alias egrep='egrep --color'
 alias fgrep='fgrep --color'
 
 # global aliases
+alias -g ...='../..'
+alias -g ....='../../..'
+alias -g .....='../../../..'
+alias -g H='| head'
+alias -g T='| tail'
+alias -g G='| egrep'
+alias -g C='| wc -l'
+alias -g S='| sort'
+alias -g SU='| sort -u'
+alias -g SR='| sort -r'
+alias -g SN='| sort -n'
+alias -g SNR='| sort -nr'
+alias -g FREQ='| sort | uniq -c | sort -n'
+alias -g L='| less'
+alias -g LL='2>&1 | less'       # pipe both stdout/stderr through pager
+alias -g CA='2>&1 | cat -A'     # better representation of non-printable chars
+alias -g NE='2> /dev/null'      # ignore stderr
+alias -g NUL='&> /dev/null'     # ignore all output
 alias -g ND='*(/om[1])'         # newest directory in CWD
 alias -g NF='*(.om[1])'         # newest file in CWD
 
