@@ -153,3 +153,5 @@ dnf install \
     wireshark \
     zip \
     zsh
+
+dnf --enablerepo=updates-debuginfo install kernel-debuginfo
