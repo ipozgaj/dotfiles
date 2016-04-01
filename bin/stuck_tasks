@@ -1,0 +1,17 @@
+#!/bin/bash
+# Print stack trace for processes in uninterruptible sleep
+
+for task in /proc/[0-9]*
+do
+    pid=$(basename $task)
+    state=$(awk '/State:/{print $2}' "$task/status" 2>/dev/null)
+    if [ "$state" == "D" ]; then
+        name=$(awk '/Name:/{print $2}' "$task/status" 2>/dev/null)
+        bt=$(cat $task/stack 2>/dev/null)
+        if [[ ! -z $name && ! -z $bt ]]; then
+            echo "$name ($pid)"
+            echo "$bt"
+            echo ""
+        fi
+    fi
+done
