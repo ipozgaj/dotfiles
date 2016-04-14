@@ -26,6 +26,7 @@ dnf install \
     cscope \
     ctags \
     curl \
+    diffstat \
     diffutils \
     dmidecode \
     dnf \
