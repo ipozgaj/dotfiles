@@ -23,6 +23,7 @@ dnf install \
     cracklib \
     cronie \
     cronie-anacron \
+    cscope \
     ctags \
     curl \
     diffutils \
