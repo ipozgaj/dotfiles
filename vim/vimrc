@@ -60,6 +60,7 @@ set nobackup                        " don't create backups when overwriting file
 
 " custom syntax highlighting
 au BufRead,BufNewFile *.json set ft=javascript
+au BufRead,BufNewFile *.py syn keyword AsyncKeywords async await | hi link AsyncKeywords Keyword
 
 " do not expand tabs to spaces in makefiles
 autocmd FileType make setlocal noexpandtab
