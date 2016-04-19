@@ -50,13 +50,15 @@ set nobackup                        " don't create backups when overwriting file
 :highlight ExtraWhitespace ctermbg=red guibg=red
 :match ExtraWhitespace /\s\+\%#\@<!$/
 
+" set leader key (default, but set it explicitly anyways)
+let mapleader = "\\"
+
 " map gb (both in visual and normal mode) to open git blame for selection/file
 :vnoremap gb :<C-U>!git blame % -L<C-R>=line("'<") <CR>,<C-R>=line("'>") <CR><CR>
 :nnoremap gb :!git blame %<CR>
 
-" map gp and gnp to set paste/nopaste
-:nnoremap gp :set paste<CR>
-:nnoremap gnp :set nopaste<CR>
+" toggle paste/nopaste on <leader>p
+:nnoremap <leader>p :set paste!<cr>
 
 " custom syntax highlighting
 autocmd BufRead,BufNewFile *.json set ft=javascript
