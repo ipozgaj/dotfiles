@@ -5,10 +5,6 @@ set nocompatible
 syntax enable
 set background=dark
 
-" cursor line highlightning (requires TERM that supports 256 colors)
-set cursorline
-hi CursorLine ctermbg=233 cterm=none
-
 " indent style
 set autoindent                      " carry indent over to new lines
 set tabstop=4                       " four spaces per tab
