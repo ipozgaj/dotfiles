@@ -51,16 +51,16 @@ set nobackup                        " don't create backups when overwriting file
 :match ExtraWhitespace /\s\+\%#\@<!$/
 
 " map gb (both in visual and normal mode) to open git blame for selection/file
-:vmap gb :<C-U>!git blame % -L<C-R>=line("'<") <CR>,<C-R>=line("'>") <CR><CR>
-:nmap gb :!git blame %<CR>
+:vnoremap gb :<C-U>!git blame % -L<C-R>=line("'<") <CR>,<C-R>=line("'>") <CR><CR>
+:nnoremap gb :!git blame %<CR>
 
 " map gp and gnp to set paste/nopaste
-:nmap gp :set paste<CR>
-:nmap gnp :set nopaste<CR>
+:nnoremap gp :set paste<CR>
+:nnoremap gnp :set nopaste<CR>
 
 " custom syntax highlighting
-au BufRead,BufNewFile *.json set ft=javascript
-au BufRead,BufNewFile *.py syn keyword AsyncKeywords async await | hi link AsyncKeywords Keyword
+autocmd BufRead,BufNewFile *.json set ft=javascript
+autocmd BufRead,BufNewFile *.py syn keyword AsyncKeywords async await | hi link AsyncKeywords Keyword
 
 " do not expand tabs to spaces in makefiles
 autocmd FileType make setlocal noexpandtab
