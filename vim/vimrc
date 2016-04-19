@@ -49,11 +49,9 @@ set nobackup                        " don't create backups when overwriting file
 " set leader key (default, but set it explicitly anyways)
 let mapleader = "\\"
 
-" map gb (both in visual and normal mode) to open git blame for selection/file
-:vnoremap gb :<C-U>!git blame % -L<C-R>=line("'<") <CR>,<C-R>=line("'>") <CR><CR>
-:nnoremap gb :!git blame %<CR>
-
-" toggle paste/nopaste on <leader>p
+" set custom mappings
+:vnoremap <leader>gb :<C-U>!git blame % -L<C-R>=line("'<") <CR>,<C-R>=line("'>") <CR><CR>
+:nnoremap <leader>gb :!git blame %<CR>
 :nnoremap <leader>p :set paste!<cr>
 
 " custom syntax highlighting
