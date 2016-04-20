@@ -1,31 +1,32 @@
 " fuck the compatibility, no one uses Teh Old Vim (TM) anymore
 set nocompatible
 
-" syntax highlighting
+" syntax highlighting and colors
 syntax enable
 set background=dark
 
-" indent style
+" indentation
 set autoindent                      " carry indent over to new lines
 set tabstop=4                       " four spaces per tab
 set softtabstop=4                   " number of spaces per tab when inserting
 set shiftwidth=4                    " four spaces per indent
 set expandtab                       " substitue spaces for tabs
-set smarttab                        " smarted tab
+set smarttab                        " see :help smarttab
 
-" display
+" UI tweaks
 set ruler                           " show cursor position
 set nonumber                        " hide line numbers
 set nolist                          " hide tabs and EOL chars
 set showcmd                         " show normal mode commands as they are entered
 set showmode                        " show editing mode in status (-- INSERT --)
 set showmatch                       " flash matching delimiters
+set wildmenu                        " show menu with autocompleter suggestions
 
 " scrolling
 set scrolljump=5                    " scroll five lines at a time vertically
 set sidescroll=10                   " minumum columns to scroll horizontally
 
-" search
+" searching
 set hlsearch                        " highlight seach words
 set incsearch                       " search with typeahead
 
@@ -43,20 +44,25 @@ set modelines=0                     " turn off modelines
 set nobackup                        " don't create backups when overwriting files
 
 " show whitespaces at the end of lines
-:highlight ExtraWhitespace ctermbg=red guibg=red
-:match ExtraWhitespace /\s\+\%#\@<!$/
+highlight ExtraWhitespace ctermbg=red guibg=red
+match ExtraWhitespace /\s\+\%#\@<!$/
 
 " set leader key (default, but set it explicitly anyways)
 let mapleader = "\\"
 
 " set custom mappings
-:vnoremap <leader>gb :<C-U>!git blame % -L<C-R>=line("'<") <CR>,<C-R>=line("'>") <CR><CR>
-:nnoremap <leader>gb :!git blame %<CR>
-:nnoremap <leader>p :set paste!<cr>
+vnoremap <leader>gb :<C-U>!git blame % -L<C-R>=line("'<") <CR>,<C-R>=line("'>") <CR><CR>
+nnoremap <leader>gb :!git blame %<CR>
+nnoremap <leader>p :set paste!<cr>
+nnoremap <leader>ss :mksession!<cr>
+nnoremap <leader><space> :nohlsearch<cr>
 
-" custom syntax highlighting
-autocmd BufRead,BufNewFile *.json set ft=javascript
-autocmd BufRead,BufNewFile *.py syntax keyword AsyncKeywords async await | highlight link AsyncKeywords Keyword
+augroup configgroup`
+    " custom syntax highlighting
+    autocmd BufRead,BufNewFile *.json set ft=javascript
+    autocmd BufRead,BufNewFile *.py syntax keyword AsyncKeywords async await
+    autocmd BufRead,BufNewFile *.py highlight link AsyncKeywords Keyword
 
-" do not expand tabs to spaces in makefiles
-autocmd FileType make setlocal noexpandtab
+    " do not expand tabs to spaces in makefiles
+    autocmd FileType make setlocal noexpandtab
+augroup END
