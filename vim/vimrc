@@ -56,7 +56,7 @@ let mapleader = "\\"
 
 " custom syntax highlighting
 autocmd BufRead,BufNewFile *.json set ft=javascript
-autocmd BufRead,BufNewFile *.py syn keyword AsyncKeywords async await | hi link AsyncKeywords Keyword
+autocmd BufRead,BufNewFile *.py syntax keyword AsyncKeywords async await | highlight link AsyncKeywords Keyword
 
 " do not expand tabs to spaces in makefiles
 autocmd FileType make setlocal noexpandtab
