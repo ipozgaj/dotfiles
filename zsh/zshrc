@@ -1,6 +1,9 @@
 # zshrc
 # (C) Igor Pozgaj <ipozgaj@gmail.com>
 
+# `zprof` for profiling what's slow during the startup
+# zmodload zsh/zprof
+
 # set paths
 path=($path /bin /usr/bin /usr/local/bin $HOME/bin)
 manpath=($manpath /usr/local/man /usr/share/man)
