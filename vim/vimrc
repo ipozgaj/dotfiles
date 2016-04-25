@@ -59,7 +59,7 @@ nnoremap <leader>s :set spell!<cr>
 nnoremap <leader>z :mksession!<cr>
 nnoremap <leader><space> :nohlsearch<cr>
 
-augroup configgroup`
+augroup configgroup
     " custom syntax highlighting
     autocmd BufRead,BufNewFile *.json set ft=javascript
     autocmd BufRead,BufNewFile *.py syntax keyword AsyncKeywords async await
