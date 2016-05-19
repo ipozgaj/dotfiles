@@ -68,9 +68,10 @@ dnf install \
     iputils \
     irssi \
     jq \
+    kernel-debug-devel \
     kernel-devel \
     kernel-headers \
-    kernel-debug-devel \
+    kernel-tools \
     less \
     lftp \
     libcgroup-tools \
