@@ -88,6 +88,7 @@ dnf install \
     mlocate \
     mtr \
     nasm \
+    ncdu \
     net-tools \
     nftables \
     ngrep \
