@@ -1,4 +1,17 @@
-dnf install \
+dnf -y update
+
+dnf -y remove \
+    abrt \
+    cockpit \
+    firewalld \
+    gssproxy \
+    irqbalance \
+    mcelog \
+    open-vm-tools \
+    rng-tools \
+    smartmontools
+
+dnf -y install \
     acl \
     aspell \
     atop \
@@ -157,4 +170,4 @@ dnf install \
     zip \
     zsh
 
-dnf --enablerepo=updates-debuginfo install kernel-debuginfo
+dnf -y --enablerepo=updates-debuginfo install kernel-debuginfo
