@@ -3,13 +3,20 @@ dnf -y update
 dnf -y remove \
     abrt \
     cockpit \
+    coolkey \
+    crda \
+    ed \
     firewalld \
+    fpaste \
+    fprintd \
     gssproxy \
     irqbalance \
+    iw \
     mcelog \
     open-vm-tools \
     rng-tools \
-    smartmontools
+    smartmontools \
+    wireless-tools
 
 dnf -y install \
     acl \
