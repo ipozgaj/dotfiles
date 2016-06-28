@@ -108,11 +108,14 @@ dnf -y install \
     mlocate \
     mtr \
     nasm \
+    nbtscan \
     ncdu \
+    net-snmp-utils \
     net-tools \
     nftables \
     ngrep \
     nicstat \
+    nikto \
     nmap \
     nmap-ncat \
     numactl \
