@@ -20,6 +20,7 @@ dnf -y remove \
 
 dnf -y install \
     acl \
+    acpi \
     aspell \
     atop \
     attr \
