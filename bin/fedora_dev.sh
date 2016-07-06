@@ -87,7 +87,6 @@ dnf -y install \
     iptstate \
     iptraf-ng \
     iputils \
-    irssi \
     jq \
     kernel-debug-devel \
     kernel-devel \
@@ -174,6 +173,7 @@ dnf -y install \
     valgrind \
     vim \
     vmtouch \
+    weechat \
     wget \
     which \
     whois \
