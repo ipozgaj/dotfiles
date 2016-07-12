@@ -137,8 +137,9 @@ dnf -y install \
     pv \
     pyflakes \
     python \
-    python3 \
     python-ipython-console \
+    python3 \
+    python3-ipython-console \
     recode \
     rpm \
     rsync \
