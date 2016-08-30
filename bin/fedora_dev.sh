@@ -182,4 +182,4 @@ dnf -y install \
     zip \
     zsh
 
-dnf -y --enablerepo=updates-debuginfo install kernel-debuginfo
+dnf -y debuginfo-install kernel-debuginfo

@@ -5,6 +5,7 @@ set nocompatible
 syntax enable
 set background=dark
 
+
 " indentation
 set autoindent                      " carry indent over to new lines
 set tabstop=4                       " four spaces per tab
