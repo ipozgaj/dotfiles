@@ -36,6 +36,7 @@ dnf -y install \
     bridge-utils \
     bzip2 \
     cifs-utils \
+    cmake \
     coreutils \
     cpio \
     cpp \
