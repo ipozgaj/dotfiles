@@ -55,13 +55,14 @@ let mapleader = "\\"
 vnoremap <leader>gb :<C-U>!git blame % -L<C-R>=line("'<") <CR>,<C-R>=line("'>") <CR><CR>
 nnoremap <leader>gb :!git blame %<CR>
 nnoremap <leader>hb :!hg annotate -dnu %<CR>
-nnoremap <leader>p :set paste!<cr>
+nnoremap <leader>n :set number!<CR>
+nnoremap <leader>p :set paste!<CR>
 nnoremap <leader>q' ciw'<C-R>"'
 nnoremap <leader>q" ciw"<C-R>""
 nnoremap <leader>q` ciw`<C-R>"`
-nnoremap <leader>s :set spell!<cr>
-nnoremap <leader>z :mksession!<cr>
-nnoremap <leader><space> :nohlsearch<cr>
+nnoremap <leader>s :set spell!<CR>
+nnoremap <leader>z :mksession!<CR>
+nnoremap <leader><space> :nohlsearch<CR>
 
 augroup configgroup
     " custom syntax highlighting
