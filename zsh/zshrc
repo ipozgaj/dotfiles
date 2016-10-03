@@ -125,16 +125,6 @@ setenv() {
 	typeset -x "${1}${1:+=}${(@)argv[2,$#]}"
 }
 
-# recompile new zshrc file
-function src() {
-	autoload -U zrecompile
-	[ -f ~/.zshrc ] && zrecompile -p ~/.zshrc
-	[ -f ~/.zcompdump ] && zrecompile -p ~/.zcompdump
-	[ -f ~/.zshrc.zwc.old ] && rm -f ~/.zshrc.zwc.old
-	[ -f ~/.zcompdump.zwc.old ] && rm -f ~/.zcompdump.zwc.old
-	source ~/.zshrc
-}
-
 # auto logout after 30 idle minutes, unless on X
 TMOUT=1800
 case $TERM in
@@ -239,3 +229,6 @@ setopt mail_warning		# warn if mail file was accessed from last login
 setopt no_beep			# prevent beeps
 setopt no_null_glob		# prevent expanding of non matched globs to *
 setopt pushd_ignore_dups	# do not place duplicates on directory stack
+
+# load custom function
+autoload -U src                 # recompile and source zshrc
