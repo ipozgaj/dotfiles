@@ -1,9 +1,6 @@
 # zshrc
 # (C) Igor Pozgaj <ipozgaj@gmail.com>
 
-# `zprof` for profiling what's slow during the startup
-# zmodload zsh/zprof
-
 # set paths
 path=($path /bin /usr/bin /usr/local/bin $HOME/bin)
 manpath=($manpath /usr/local/man /usr/share/man)
@@ -24,7 +21,7 @@ umask 022
 # set limits
 unlimit			# user hard limits
 limit core 0		# no core dumps
-limit maxproc 2048	# limit number of processes
+limit maxproc 2000	# limit number of processes
 limit stack 8192	# limit stack size
 limit -s		# use limits for this and child shells
 
@@ -138,11 +135,6 @@ function src() {
 	source ~/.zshrc
 }
 
-function restore_backups() {
-    autoload -U zmv
-    zmv -f '(.?*).bak' '$1'
-}
-
 # auto logout after 30 idle minutes, unless on X
 TMOUT=1800
 case $TERM in
@@ -168,7 +160,7 @@ esac
 (( ${+PAGER} )) || export PAGER=`which less`
 (( ${+EDITOR} )) || export EDITOR=`which vim`
 
-# color support for less
+# colors in less/man
 export LESS_TERMCAP_mb=$'\E[01;31m'       # begin blinking-mode
 export LESS_TERMCAP_md=$'\E[01;38;5;74m'  # begin bold-mode
 export LESS_TERMCAP_me=$'\E[0m'           # end (blinking/bold)-mode
