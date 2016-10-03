@@ -230,5 +230,5 @@ setopt no_beep			# prevent beeps
 setopt no_null_glob		# prevent expanding of non matched globs to *
 setopt pushd_ignore_dups	# do not place duplicates on directory stack
 
-# load custom function
+# load custom functions
 autoload -U src                 # recompile and source zshrc
