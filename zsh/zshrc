@@ -124,8 +124,20 @@ alias -g SN='| sort -n'
 alias -g SNR='| sort -nr'
 alias -g FREQ='| sort | uniq -c | sort -n'
 alias -g L='| less'
-alias -g LL='2>&1 | less'       # pipe both stdout/stderr through pager
+alias -g LA='2>&1 | less'       # pipe both stdout/stderr through pager
 alias -g CA='2>&1 | cat -A'     # better representation of non-printable chars
+
+# sufix aliases
+alias -s log="less"
+alias -s json="jq ."
+alias -s git="git clone"
+alias -s gz="gzip -l"
+alias -s zip="unzip -l"
+alias -s tar="tar tvf"
+alias -s tgz="tar tvzf"
+alias -s tbz2="tar tvjf"
+alias -s pem="openssl x509 -noout -text -in"
+alias -s der="openssl x509 -inform der -noout -text -in"
 
 # extra safety for root
 if ((EUID==0)); then
