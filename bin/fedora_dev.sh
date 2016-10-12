@@ -96,6 +96,7 @@ dnf -y install \
     less \
     lftp \
     libcgroup-tools \
+    libxml2 \
     logrotate \
     lsof \
     ltrace \

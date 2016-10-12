@@ -130,6 +130,7 @@ alias -g CA='2>&1 | cat -A'     # better representation of non-printable chars
 # sufix aliases
 alias -s log="less"
 alias -s json="jq ."
+alias -s xml="xmllint --format"
 alias -s git="git clone"
 alias -s gz="gzip -l"
 alias -s zip="unzip -l"
