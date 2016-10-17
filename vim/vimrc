@@ -45,6 +45,11 @@ set viminfo='50,"50                 " '=marks for x files, "=registers for x fil
 set modelines=0                     " turn off modelines
 set nobackup                        " don't create backups when overwriting files
 
+" remove comment character when joining commented lines
+if v:version > 703 || v:version == 703 && has("patch541")
+  set formatoptions+=j
+endif
+
 " show whitespaces at the end of lines
 highlight ExtraWhitespace ctermbg=red guibg=red
 match ExtraWhitespace /\s\+\%#\@<!$/
