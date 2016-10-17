@@ -2,7 +2,7 @@
 set nocompatible
 
 " syntax highlighting and colors
-if has('syntax')
+if has('syntax') && !exists('g:syntax_on')
     syntax enable
     set background=dark
 endif
