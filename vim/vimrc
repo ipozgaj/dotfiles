@@ -2,9 +2,10 @@
 set nocompatible
 
 " syntax highlighting and colors
-syntax enable
-set background=dark
-
+if has('syntax')
+    syntax enable
+    set background=dark
+endif
 
 " indentation
 set autoindent                      " carry indent over to new lines
