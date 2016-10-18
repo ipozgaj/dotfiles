@@ -95,6 +95,7 @@ dnf -y install \
     kernel-tools \
     less \
     lftp \
+    libcap-ng-utils \
     libcgroup-tools \
     libxml2 \
     logrotate \
