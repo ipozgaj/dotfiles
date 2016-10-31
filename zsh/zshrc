@@ -137,6 +137,7 @@ alias -s zip="unzip -l"
 alias -s tar="tar tvf"
 alias -s tgz="tar tvzf"
 alias -s tbz2="tar tvjf"
+alias -s cert="openssl x509 -noout -text -in"
 alias -s pem="openssl x509 -noout -text -in"
 alias -s der="openssl x509 -inform der -noout -text -in"
 
