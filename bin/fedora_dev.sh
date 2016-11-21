@@ -68,6 +68,7 @@ dnf -y install \
     gdb \
     GeoIP \
     git \
+    glibc \
     glibc-devel \
     glibc-headers \
     gnupg2 \
@@ -161,6 +162,7 @@ dnf -y install \
     stunnel \
     sudo \
     sysstat \
+    systemd \
     systemtap \
     talk \
     tar \
