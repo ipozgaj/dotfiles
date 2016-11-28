@@ -37,6 +37,7 @@ dnf -y install \
     bzip2 \
     cifs-utils \
     cmake \
+    colordiff \
     coreutils \
     cpio \
     cpp \
