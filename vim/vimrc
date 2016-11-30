@@ -44,6 +44,7 @@ set undolevels=1000                 " number of undos stored
 set viminfo='50,"50                 " '=marks for x files, "=registers for x files
 set modelines=0                     " turn off modelines
 set nobackup                        " don't create backups when overwriting files
+set path+=**                        " make :find and gf search recursively
 
 " remove comment character when joining commented lines
 if v:version > 703 || v:version == 703 && has("patch541")
