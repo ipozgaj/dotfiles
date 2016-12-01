@@ -56,6 +56,7 @@ dnf -y install \
     dstat \
     elfutils \
     ethtool \
+    expect \
     fakeroot \
     file \
     findutils \
