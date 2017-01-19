@@ -156,6 +156,7 @@ dnf -y install \
     schedtool \
     scipy \
     sed \
+    setools-console \
     socat \
     splint \
     sqlite \
