@@ -35,6 +35,7 @@ dnf -y install \
     blktrace \
     bridge-utils \
     bzip2 \
+    cargo \
     cifs-utils \
     cmake \
     colordiff \
@@ -74,6 +75,7 @@ dnf -y install \
     glibc-devel \
     glibc-headers \
     gnupg2 \
+    golang \
     grep \
     gzip \
     hdparm \
@@ -151,6 +153,7 @@ dnf -y install \
     rsync \
     ruby \
     ruby-irb \
+    rust \
     samba-client \
     scapy \
     schedtool \
