@@ -42,4 +42,4 @@ install-zsh:
 	if [ -f ~/.zshrc ]; then mv ~/.zshrc{,.bak}; fi
 	if [ -d ~/.zfunc ]; then mv ~/.zfunc{,.bak}; fi
 	cp -v zsh/zshrc ~/.zshrc
-	cp -v zsh/zfunc ~/.zfunc
+	cp -rv zsh/zfunc ~/.zfunc
