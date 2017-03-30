@@ -62,6 +62,7 @@ let mapleader = "\\"
 vnoremap <leader>gb :<C-U>!git blame % -L<C-R>=line("'<") <CR>,<C-R>=line("'>") <CR><CR>
 nnoremap <leader>gb :!git blame %<CR>
 nnoremap <leader>hb :!hg annotate -dnu %<CR>
+nnoremap <leader>i :set ignorecase!<CR>
 nnoremap <leader>n :set number!<CR>
 nnoremap <leader>p :set paste!<CR>
 nnoremap <leader>q' ciw'<C-R>"'
