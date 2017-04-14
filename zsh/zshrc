@@ -109,23 +109,6 @@ alias pcregrep='pcregrep --color'
 alias -g ...='../..'
 alias -g ....='../../..'
 alias -g .....='../../../..'
-alias -g NE='2> /dev/null'      # ignore stderr
-alias -g NUL='&> /dev/null'     # ignore all output
-alias -g ND='*(/om[1])'         # newest directory in CWD
-alias -g NF='*(.om[1])'         # newest file in CWD
-alias -g H='| head'
-alias -g T='| tail'
-alias -g G='| egrep'
-alias -g C='| wc -l'
-alias -g S='| sort'
-alias -g SU='| sort -u'
-alias -g SR='| sort -r'
-alias -g SN='| sort -n'
-alias -g SNR='| sort -nr'
-alias -g FREQ='| sort | uniq -c | sort -n'
-alias -g L='| less'
-alias -g LA='2>&1 | less'       # pipe both stdout/stderr through pager
-alias -g CA='2>&1 | cat -A'     # better representation of non-printable chars
 
 # sufix aliases
 alias -s log="less"
