@@ -158,8 +158,9 @@ esac
 
 # export some common variables
 (( ${+TERM} )) || export TERM='vt100'
-(( ${+PAGER} )) || export PAGER=`which less`
-(( ${+EDITOR} )) || export EDITOR=`which vim`
+(( ${+PAGER} )) || export PAGER=$(which less)
+(( ${+EDITOR} )) || export EDITOR=$(which vim)
+(( ${+VISUAL} )) || export VISUAL=$EDITOR
 
 # tune pager behavior
 export LESS=FRKX                          # see man less(1)

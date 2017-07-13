@@ -135,6 +135,7 @@ dnf -y install \
     parallel \
     parted \
     patch \
+    pciutils \
     pcre-tools \
     perf \
     perl \
