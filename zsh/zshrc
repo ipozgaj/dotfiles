@@ -235,6 +235,7 @@ setopt hist_find_no_dups	# do not show duplicates on history-find
 setopt hist_ignore_all_dups     # ignore duplicates in history file
 setopt hist_ignore_space        # do not save commands starting with space
 setopt hist_reduce_blanks	# remove superfluous blanks from history file
+setopt hist_no_functions        # do not store function definitions
 setopt hist_verify		# do not execute history expansion, load it only
 setopt inc_append_history	# write entries to history files incrementaly
 setopt interactive_comments     # allow comments in interractive shells
