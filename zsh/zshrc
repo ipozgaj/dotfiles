@@ -240,6 +240,7 @@ setopt hist_verify		# do not execute history expansion, load it only
 setopt inc_append_history	# write entries to history files incrementaly
 setopt interactive_comments     # allow comments in interractive shells
 setopt mail_warning		# warn if mail file was accessed from last login
+setopt menucomplete             # automatically complete by using the first suggestion
 setopt no_beep			# prevent beeps
 setopt no_null_glob		# prevent expanding of non matched globs to *
 setopt pushd_ignore_dups	# do not place duplicates on directory stack
