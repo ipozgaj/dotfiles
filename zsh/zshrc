@@ -58,8 +58,8 @@ bindkey "^Xf" insert-files
 
 # set shell history options
 HISTFILE=$HOME/.zhistory
-SAVEHIST=100000				# history file size
-HISTSIZE=50000				# internal history list size
+SAVEHIST=30000				# history file size
+HISTSIZE=15000				# internal history list size
 
 # size of directory stack
 DIRSTACKSIZE=20
@@ -75,11 +75,9 @@ WATCHFMT='%n %a %l from %m at %t.'
 
 # set prompt (red for root, cyan otherwise, format: user@machine:cwd)
 autoload -U colors && colors
-if ((EUID==0)); then
-    PROMPT="%{$fg[red]%}%n@%m%{$fg_bold[yellow]%}:%{$fg_bold[red]%}%1~%{$reset_color%}%{$fg[yellow]%}%#%{$reset_color%} "
-else
-    PROMPT="%{$fg[cyan]%}%n@%m%{$fg_bold[yellow]%}:%{$fg_bold[cyan]%}%1~%{$reset_color%}%{$fg[yellow]%}%#%{$reset_color%} "
-fi
+PROMPT="
+%{$fg[cyan]%}%n%{$fg_bold[cyan]%}@%{$reset_color%}%{$fg[cyan]%}%2m %{$fg_bold[cyan]%}%~%{$reset_color%}
+%(#.%{$fg_bold[red]%}%#.%{$fg_bold[yellow]%}%#)%{$reset_color%} "
 
 # don't ask 'do you wish to see all XX possibilities' before menu selection
 LISTPROMPT=''
@@ -97,7 +95,7 @@ alias lsd='ls -ld *(-/DN)'
 alias j='jobs -l'
 alias p='ps uxf'
 alias pa='ps auxf'
-alias h='history -fD'
+alias h='history -fD -20'
 alias quit='exit'
 alias vi='vim'
 alias grep='grep --color'
