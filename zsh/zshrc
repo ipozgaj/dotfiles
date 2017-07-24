@@ -76,7 +76,7 @@ WATCHFMT='%n %a %l from %m at %t.'
 # set prompt (red for root, cyan otherwise, format: user@machine:cwd)
 autoload -U colors && colors
 PROMPT="
-%{$fg[cyan]%}%n%{$fg_bold[cyan]%}@%{$reset_color%}%{$fg[cyan]%}%2m %{$fg_bold[cyan]%}%~%{$reset_color%}
+%{$fg[cyan]%}%n%{$fg[yellow]%}@%{$reset_color%}%{$fg[cyan]%}%2m %{$fg_bold[cyan]%}%~%{$reset_color%}
 %(#.%{$fg_bold[red]%}%#.%{$fg_bold[yellow]%}%#)%{$reset_color%} "
 
 # don't ask 'do you wish to see all XX possibilities' before menu selection
