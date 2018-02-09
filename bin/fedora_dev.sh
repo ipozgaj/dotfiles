@@ -116,7 +116,6 @@ dnf -y install \
     mlocate \
     mtr \
     nasm \
-    nbtscan \
     ncdu \
     net-snmp-utils \
     net-tools \
@@ -155,7 +154,6 @@ dnf -y install \
     ruby \
     ruby-irb \
     rust \
-    samba-client \
     scapy \
     schedtool \
     scipy \
