@@ -1,7 +1,11 @@
 dnf -y update
 
+
 dnf -y remove \
     abrt \
+    audit \
+    bluez \
+    cifs-utils \
     cockpit \
     coolkey \
     crda \
@@ -12,10 +16,14 @@ dnf -y remove \
     gssproxy \
     irqbalance \
     iw \
+    lvm2 \
     mcelog \
+    ModemManager \
     open-vm-tools \
+    polkit \
     rng-tools \
     smartmontools \
+    sssd \
     wireless-tools
 
 dnf -y install \
@@ -24,7 +32,6 @@ dnf -y install \
     aspell \
     atop \
     attr \
-    audit \
     autoconf \
     automake \
     bash \
@@ -35,8 +42,6 @@ dnf -y install \
     blktrace \
     bridge-utils \
     bzip2 \
-    cargo \
-    cifs-utils \
     cmake \
     colordiff \
     coreutils \
@@ -44,17 +49,12 @@ dnf -y install \
     cpp \
     cppcheck \
     cpuid \
-    cracklib \
-    cronie \
-    cronie-anacron \
     ctags \
     curl \
     diffstat \
     diffutils \
     dmidecode \
-    dnf \
     dsniff \
-    dstat \
     elfutils \
     ethtool \
     expect \
@@ -75,7 +75,6 @@ dnf -y install \
     glibc-devel \
     glibc-headers \
     gnupg2 \
-    golang \
     grep \
     gzip \
     hdparm \
@@ -126,7 +125,6 @@ dnf -y install \
     nmap \
     nmap-ncat \
     numactl \
-    numpy \
     ntpdate \
     openssh-clients \
     openssh-server \
@@ -144,21 +142,18 @@ dnf -y install \
     psmisc \
     pv \
     pyflakes \
-    python \
-    python-ipython-console \
     python3 \
-    python3-ipython-console \
+    python3-ipython \
+    python3-numpy \
+    python3-pandas \
+    python3-seaborn \
+    python3-scipy \
     recode \
     rpm \
     rsync \
-    ruby \
-    ruby-irb \
-    rust \
     scapy \
     schedtool \
-    scipy \
     sed \
-    setools-console \
     socat \
     splint \
     sqlite \
@@ -167,12 +162,9 @@ dnf -y install \
     stunnel \
     sudo \
     sysstat \
-    systemd \
     systemtap \
-    talk \
     tar \
     tcpdump \
-    telnet \
     the_silver_searcher \
     time \
     tmux \
@@ -188,8 +180,8 @@ dnf -y install \
     wget \
     which \
     whois \
-    wireshark \
+    wireshark-cli \
     zip \
     zsh
 
-dnf -y debuginfo-install kernel-debuginfo
+# dnf -y debuginfo-install kernel-debuginfo
