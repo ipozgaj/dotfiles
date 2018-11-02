@@ -55,6 +55,11 @@ endif
 highlight ExtraWhitespace ctermbg=red guibg=red
 match ExtraWhitespace /\s\+\%#\@<!$/
 
+" highlight current line
+set cursorline
+highlight clear CursorLine
+highlight CursorLine ctermfg=none ctermbg=235
+
 " set leader key (default, but set it explicitly anyways)
 let mapleader = "\\"
 
