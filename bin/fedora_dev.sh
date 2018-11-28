@@ -1,5 +1,6 @@
-dnf -y update
+# based on Fedora 29 server minimal (net) install
 
+dnf -y update
 
 dnf -y remove \
     abrt \
@@ -24,6 +25,7 @@ dnf -y remove \
     rng-tools \
     smartmontools \
     sssd \
+    sssd-client \
     wireless-tools
 
 dnf -y install \
