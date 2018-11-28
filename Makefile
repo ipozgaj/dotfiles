@@ -26,9 +26,10 @@ install-mercurial:
 	cp -v hg/hgrc ~/.hgrc
 
 install-ssh:
-	if [ ! -d ~/.ssh ]; then mkdir ~/.ssh; chown 700 ~/.ssh; fi
+	if [ ! -d ~/.ssh ]; then mkdir -m 700 ~/.ssh; fi
 	if [ -f ~/.ssh/config ]; then mv ~/.ssh/config{,.bak}; fi
 	cp -v ssh/config ~/.ssh/config
+	test -f ~/.ssh/authorized_keys || touch ~/.ssh/authorized_keys && chmod 600 ~/.ssh/authorized_keys
 
 install-tmux:
 	if [ -f ~/.tmux.conf ]; then mv ~/.tmux.conf{,.bak}; fi
