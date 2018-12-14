@@ -53,6 +53,7 @@ dnf -y install \
     cpuid \
     ctags \
     curl \
+    device-mapper \
     diffstat \
     diffutils \
     dmidecode \
