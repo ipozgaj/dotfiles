@@ -70,7 +70,7 @@ vnoremap <leader>gb :<C-U>!git blame % -L<C-R>=line("'<") <CR>,<C-R>=line("'>") 
 nnoremap <leader>gb :!git blame %<CR>
 nnoremap <leader>hb :!hg annotate -dnu %<CR>
 nnoremap <leader>i :set ignorecase!<CR>
-nnoremap <leader>n :set number! relativenumber!<cr>
+nnoremap <leader>n :set number!<cr>
 nnoremap <leader>p :set paste!<CR>
 nnoremap <leader>q' ciw'<C-R>"'
 nnoremap <leader>q" ciw"<C-R>""
