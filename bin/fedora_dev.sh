@@ -141,6 +141,7 @@ dnf -y install \
     perl \
     pigz \
     procps-ng \
+    proxychains-ng \
     psacct \
     psmisc \
     pv \
