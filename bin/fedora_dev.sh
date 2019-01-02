@@ -42,6 +42,7 @@ dnf -y install \
     binutils \
     bison \
     blktrace \
+    bpftrace \
     bridge-utils \
     bzip2 \
     cmake \
@@ -166,13 +167,11 @@ dnf -y install \
     stunnel \
     sudo \
     sysstat \
-    systemtap \
     tar \
     tcpdump \
     the_silver_searcher \
     time \
     tmux \
-    trace-cmd \
     traceroute \
     tree \
     unzip \
