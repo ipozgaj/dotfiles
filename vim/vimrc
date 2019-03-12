@@ -82,8 +82,6 @@ nnoremap <leader><space> :nohlsearch<CR>
 augroup configgroup
     " custom syntax highlighting
     autocmd BufRead,BufNewFile *.json set ft=javascript
-    autocmd BufRead,BufNewFile *.py syntax keyword AsyncKeywords async await
-    autocmd BufRead,BufNewFile *.py highlight link AsyncKeywords Keyword
 
     " do not expand tabs to spaces in makefiles
     autocmd FileType make setlocal noexpandtab
