@@ -87,4 +87,7 @@ augroup configgroup
 
     " do not expand tabs to spaces in makefiles
     autocmd FileType make setlocal noexpandtab
+
+     " indent folding for Python files
+    autocmd FileType python setlocal foldmethod=indent nofoldenable
 augroup END
