@@ -1,5 +1,6 @@
 # zshrc
 # (C) Igor Pozgaj <ipozgaj@gmail.com>
+# vim: ts=8
 
 # set paths
 path=($path /bin /usr/bin /usr/local/bin $HOME/bin)
@@ -21,7 +22,7 @@ umask 022
 # set limits
 unlimit			# user hard limits
 limit core 0		# no core dumps
-limit maxproc 2000	# limit number of processes
+limit maxproc 5000	# limit number of processes
 limit stack 8192	# limit stack size
 limit -s		# use limits for this and child shells
 
@@ -41,25 +42,26 @@ bindkey "^[[B" down-line-or-search	# fwd-history-search on down arrow
 bindkey "^[e" expand-cmd-path		# expand command name on C-e
 bindkey " " magic-space			# history expansion on space
 
-# edit current command line
+# open the current command line in $EDITOR
 autoload -U edit-command-line
 zle -N edit-command-line
 bindkey "^X^e" edit-command-line
 
-# incremental word completion
+# allows incremental completion of a word
 autoload -U incremental-complete-word
 zle -N incremental-complete-word
 bindkey "^Xi" incremental-complete-word
 
-# incremental file expansion
+# allows typing a file pattern and shows the result of the expansion at each step
+# if <CR> is hit, all the expansions are inserted into the command line
 autoload -U insert-files
 zle -N insert-files
 bindkey "^Xf" insert-files
 
 # set shell history options
 HISTFILE=$HOME/.zhistory
-SAVEHIST=30000				# history file size
-HISTSIZE=15000				# internal history list size
+SAVEHIST=20000				# history file size
+HISTSIZE=10000				# internal history list size
 
 # size of directory stack
 DIRSTACKSIZE=20
@@ -164,7 +166,7 @@ esac
 (( ${+EDITOR} )) || export EDITOR=$(which vim)
 (( ${+VISUAL} )) || export VISUAL=$EDITOR
 
-# tune pager behavior
+# enable colors in less(1)
 export LESS=FRKX                          # see man less(1)
 export LESS_TERMCAP_mb=$'\E[01;31m'       # begin blinking-mode
 export LESS_TERMCAP_md=$'\E[01;38;5;74m'  # begin bold-mode

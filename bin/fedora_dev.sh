@@ -153,6 +153,7 @@ dnf -y install \
     python3-pandas \
     python3-seaborn \
     python3-scipy \
+    python3-sympy \
     recode \
     rpm \
     rsync \
