@@ -155,6 +155,7 @@ dnf -y install \
     python3-scipy \
     python3-sympy \
     recode \
+    ripgrep \
     rpm \
     rsync \
     scapy \
@@ -170,7 +171,6 @@ dnf -y install \
     sysstat \
     tar \
     tcpdump \
-    the_silver_searcher \
     time \
     tmux \
     traceroute \
