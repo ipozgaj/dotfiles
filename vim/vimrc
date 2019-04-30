@@ -47,6 +47,9 @@ set modelines=5                     " search 5 lines from top/bottom for modelin
 set nobackup                        " don't create backups when overwriting files
 set path+=**                        " make :find and gf search recursively
 
+" enable filetype plugin
+filetype plugin on
+
 " remove comment character when joining commented lines
 if v:version > 703 || v:version == 703 && has("patch541")
   set formatoptions+=j
