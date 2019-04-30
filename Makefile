@@ -36,8 +36,10 @@ install-tmux:
 	cp -v tmux/tmux.conf ~/.tmux.conf
 
 install-vim:
+	if [ ! -d ~/.vim/ftplugin ]; then mkdir -pm 700 ~/.vim/ftplugin; fi
 	if [ -f ~/.vimrc ]; then mv ~/.vimrc{,.bak}; fi
 	cp -v vim/vimrc ~/.vimrc
+	cp -v vim/ftplugin/* ~/.vim/ftplugin
 
 install-zsh:
 	if [ -f ~/.zshrc ]; then mv ~/.zshrc{,.bak}; fi
