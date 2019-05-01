@@ -149,6 +149,7 @@ dnf -y install \
     pyflakes \
     python3 \
     python3-ipython \
+    python3-mypy \
     python3-numpy \
     python3-pandas \
     python3-seaborn \
