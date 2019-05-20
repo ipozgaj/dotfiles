@@ -172,6 +172,7 @@ dnf -y install \
     stunnel \
     sudo \
     sysstat \
+    systemd-container \
     tar \
     tcpdump \
     time \
