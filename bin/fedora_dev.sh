@@ -148,12 +148,14 @@ dnf -y install \
     pv \
     pyflakes \
     python3 \
+    python3-beautifulsoup4 \
     python3-ipython \
     python3-matplotlib \
     python3-mypy \
     python3-notebook \
     python3-numpy \
     python3-pandas \
+    python3-requests \
     python3-scapy \
     python3-scipy \
     python3-seaborn \
