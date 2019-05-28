@@ -158,6 +158,7 @@ dnf -y install \
     python3-requests \
     python3-scapy \
     python3-scipy \
+    python3-scrapy \
     python3-seaborn \
     python3-sympy \
     recode \
