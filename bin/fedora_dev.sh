@@ -154,14 +154,14 @@ dnf -y install \
     python3-notebook \
     python3-numpy \
     python3-pandas \
-    python3-seaborn \
+    python3-scapy \
     python3-scipy \
+    python3-seaborn \
     python3-sympy \
     recode \
     ripgrep \
     rpm \
     rsync \
-    scapy \
     schedtool \
     sed \
     socat \
