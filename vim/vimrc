@@ -73,13 +73,13 @@ nnoremap Q @@
 vnoremap <leader>gb :<C-U>!git blame % -L<C-R>=line("'<") <CR>,<C-R>=line("'>") <CR><CR>
 nnoremap <leader>gb :!git blame %<CR>
 nnoremap <leader>hb :!hg annotate -dnu %<CR>
-nnoremap <leader>i :set ignorecase!<CR>
-nnoremap <leader>n :set number!<cr>
-nnoremap <leader>p :set paste!<CR>
+nnoremap <leader>i :set ignorecase! ignorecase?<CR>
+nnoremap <leader>n :set number! number?<cr>
+nnoremap <leader>p :set paste! paste?<CR>
 nnoremap <leader>q' ciw'<C-R>"'
 nnoremap <leader>q" ciw"<C-R>""
 nnoremap <leader>q` ciw`<C-R>"`
-nnoremap <leader>s :set spell!<CR>
+nnoremap <leader>s :set spell! spell?<CR>
 nnoremap <leader>z :mksession!<CR>
 nnoremap <leader><space> :nohlsearch<CR>
 
