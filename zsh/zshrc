@@ -23,7 +23,6 @@ umask 022
 unlimit			# user hard limits
 limit core 0		# no core dumps
 limit maxproc 5000	# limit number of processes
-limit stack 8192	# limit stack size
 limit -s		# use limits for this and child shells
 
 # set emacs key bindings
