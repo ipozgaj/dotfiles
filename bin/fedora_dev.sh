@@ -37,6 +37,7 @@ dnf -y install \
     autoconf \
     automake \
     bash \
+    bat \
     bc \
     bind-utils \
     binutils \
