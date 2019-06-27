@@ -61,6 +61,7 @@ dnf -y install \
     dmidecode \
     dsniff \
     elfutils \
+    entr \
     ethtool \
     expect \
     fakeroot \
