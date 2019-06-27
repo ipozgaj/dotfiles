@@ -29,6 +29,7 @@ dnf -y remove \
     wireless-tools
 
 dnf -y install \
+    ShellCheck \
     acl \
     acpi \
     aspell \
