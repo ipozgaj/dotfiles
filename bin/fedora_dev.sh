@@ -2,32 +2,6 @@
 
 dnf -y update
 
-dnf -y remove \
-    abrt \
-    audit \
-    bluez \
-    cifs-utils \
-    cockpit \
-    coolkey \
-    crda \
-    ed \
-    firewalld \
-    fpaste \
-    fprintd \
-    gssproxy \
-    irqbalance \
-    iw \
-    lvm2 \
-    mcelog \
-    ModemManager \
-    open-vm-tools \
-    polkit \
-    rng-tools \
-    smartmontools \
-    sssd \
-    sssd-client \
-    wireless-tools
-
 dnf -y install \
     ShellCheck \
     acl \
@@ -35,6 +9,7 @@ dnf -y install \
     aspell \
     atop \
     attr \
+    audit \
     autoconf \
     automake \
     bash \
@@ -170,6 +145,7 @@ dnf -y install \
     rsync \
     schedtool \
     sed \
+    setools-console \
     socat \
     splint \
     sqlite \
