@@ -56,6 +56,7 @@ dnf -y install \
     cpuid \
     ctags \
     curl \
+    debootstrap \
     device-mapper \
     diffstat \
     diffutils \
