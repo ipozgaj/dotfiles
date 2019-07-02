@@ -112,7 +112,6 @@ dnf -y install \
     logrotate \
     lsof \
     ltrace \
-    lxc \
     m4 \
     make \
     man-pages \
