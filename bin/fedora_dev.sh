@@ -175,4 +175,14 @@ dnf -y install \
     zip \
     zsh
 
+#dnf remove -y \
+#    open-vm-tools \
+#    sssd\* \
+#    trousers
+
+# systemctl stop firewalld
+# systemctl disable firewalld
+
+# vi /etc/dnf/dnf.conf
+
 # dnf -y debuginfo-install kernel-debuginfo
