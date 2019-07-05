@@ -119,6 +119,7 @@ dnf -y install \
     perf \
     perl \
     pigz \
+    policycoreutils \
     policycoreutils-python-utils \
     procps-ng \
     proxychains-ng \
