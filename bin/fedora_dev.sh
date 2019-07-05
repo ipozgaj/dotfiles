@@ -185,4 +185,6 @@ dnf -y install \
 
 # vi /etc/dnf/dnf.conf
 
+# dnf install --releasever=30 --installroot=/var/lib/machines/f30-base --disablerepo="*" --enablerepo=fedora,updates fedora-release systemd dnf passwd vim-minimal
+
 # dnf -y debuginfo-install kernel-debuginfo
