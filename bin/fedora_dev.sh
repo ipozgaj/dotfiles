@@ -177,6 +177,7 @@ dnf -y install \
 
 #dnf remove -y \
 #    open-vm-tools \
+#    polkit \
 #    sssd\* \
 #    trousers
 
