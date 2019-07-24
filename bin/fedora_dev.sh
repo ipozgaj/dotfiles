@@ -103,7 +103,6 @@ dnf -y install \
     nftables \
     ngrep \
     nicstat \
-    nikto \
     nmap \
     nmap-ncat \
     numactl \
@@ -176,17 +175,25 @@ dnf -y install \
     zip \
     zsh
 
+# Remove garbage
 #dnf remove -y \
 #    open-vm-tools \
 #    polkit \
 #    sssd\* \
 #    trousers
 
+# Stop and disable firewalld
 # systemctl stop firewalld
 # systemctl disable firewalld
 
+# Change installonly_limit
 # vi /etc/dnf/dnf.conf
 
+# Setup containers
 # dnf install --releasever=30 --installroot=/var/lib/machines/f30-base --disablerepo="*" --enablerepo=fedora,updates fedora-release systemd dnf passwd vim-minimal
+# echo >> /etc/fstab
+# echo '# overlay filesystems for containers in /var/lib/machines' >> /etc/fstab
+# echo 'overlay /var/lib/machines/mysql overlay noauto,lowerdir=/var/lib/machines/f30-base,upperdir=/var/lib/machines/mysql,workdir=/var/lib/machines/.workdir/mysql 0 0' >> /etc/fstab
 
+#ainstall kernel-debuginfo
 # dnf -y debuginfo-install kernel-debuginfo
