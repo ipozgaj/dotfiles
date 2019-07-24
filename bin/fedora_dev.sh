@@ -195,5 +195,8 @@ dnf -y install \
 # echo '# overlay filesystems for containers in /var/lib/machines' >> /etc/fstab
 # echo 'overlay /var/lib/machines/mysql overlay noauto,lowerdir=/var/lib/machines/f30-base,upperdir=/var/lib/machines/mysql,workdir=/var/lib/machines/.workdir/mysql 0 0' >> /etc/fstab
 
-#ainstall kernel-debuginfo
+# change SELinux mode to permissive
+# vi /etc/selinux/config
+
+# install kernel-debuginfo
 # dnf -y debuginfo-install kernel-debuginfo
