@@ -164,6 +164,7 @@ dnf -y install \
     tree \
     unzip \
     util-linux \
+    util-linux-user \
     valgrind \
     vim \
     vmtouch \
@@ -176,15 +177,16 @@ dnf -y install \
     zsh
 
 # Remove garbage
-#dnf remove -y \
-#    open-vm-tools \
-#    polkit \
-#    sssd\* \
-#    trousers
+dnf remove -y \
+    open-vm-tools \
+    polkit \
+    sssd-common \
+    sssd-client \
+    trousers
 
 # Stop and disable firewalld
-# systemctl stop firewalld
-# systemctl disable firewalld
+systemctl stop firewalld
+systemctl disable firewalld
 
 # Change installonly_limit
 # vi /etc/dnf/dnf.conf
@@ -197,6 +199,7 @@ dnf -y install \
 
 # change SELinux mode to permissive
 # vi /etc/selinux/config
+# setenforce permissive
 
 # install kernel-debuginfo
 # dnf -y debuginfo-install kernel-debuginfo
