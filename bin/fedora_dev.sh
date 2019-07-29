@@ -127,7 +127,8 @@ dnf -y install \
     pv \
     pyflakes \
     python3 \
-    python3-beautifulsoup4 \
+    python4-beautifulsoup4 \
+    python3-black \
     python3-ipython \
     python3-matplotlib \
     python3-mypy \
