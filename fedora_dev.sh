@@ -45,6 +45,7 @@ if [ "$INSTALL_PACKAGE_GROUP_ADMIN_TOOLS" -eq 1 ]; then
         mdadm \
         numactl \
         ntpdate \
+        nvme-cli \
         parted \
         passwd \
         pciutils \
