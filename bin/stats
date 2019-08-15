@@ -1,9 +1,8 @@
 #!/bin/bash
-# (C) 2015 Igor Pozgaj <ipozgaj@gmail.com>
-# prints basic descriptive statistics data for numbers on stding
+# prints basic descriptive statistics data for numbers on stdin
 
 (
-  echo "count range avg std var min p1 p2 p5 p10 p25 p50 p90 p95 p99 max"
+  echo "count card range avg std min p1 p2 p5 p10 p25 p50 p90 p95 p99 max"
 
   sort -n | awk '
       BEGIN { sum = 0 ; variance = 0 }
@@ -13,14 +12,16 @@
       {
         sum += $1;
         s[NR - 1] = $1;
-      } END {
+        seen[$1] = 1;
+      }
+      END {
         avg = sum / NR;
         for (i=0 ; i<NR ; i++) { variance += (s[i] - avg)^2 / NR };
         print NR,
+        length(seen),
         max - min,
         avg,
         sqrt(variance),
-        variance,
         min,
         s[int(NR*0.01-0.5)],
         s[int(NR*0.02-0.5)],
