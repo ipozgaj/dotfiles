@@ -38,7 +38,6 @@ if [ "$INSTALL_PACKAGE_GROUP_ADMIN_TOOLS" -eq 1 ]; then
         iotop \
         libcap-ng-utils \
         libcgroup-tools \
-        libcgroup-tools \
         logrotate \
         lsof \
         ltrace \
