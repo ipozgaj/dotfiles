@@ -61,7 +61,7 @@ if [ "$INSTALL_PACKAGE_GROUP_ADMIN_TOOLS" -eq 1 ]; then
         schedtool \
         setools-console \
         strace \
-        stress \
+        stress-ng \
         sudo \
         sysstat \
         systemd-container \
