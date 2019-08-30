@@ -11,10 +11,13 @@ REMOVE_CRUFT_PACKAGES=1
 DISABLE_FIREWALLD=1
 CHANGE_SELINUX_TO_PERMISSIVE=1
 CHANGE_DNF_SETTINGS=1
-SETUP_CONTAINERS=1
+SETUP_CONTAINERS=0
+CHANGE_SHELL=1
+INSTALL_DEBUGINFO=0
 
 # administration, hardware, security and tracing tools
 if [ "$INSTALL_PACKAGE_GROUP_ADMIN_TOOLS" -eq 1 ]; then
+    echo Installing package group: administration
     dnf -y install \
         acl \
         acpi \
@@ -72,6 +75,7 @@ fi
 
 # other tools, not related to administration
 if [ "$INSTALL_PACKAGE_GROUP_UTILITIES" -eq 1 ]; then
+    echo Installing package group: utilities
     dnf -y install \
         aspell \
         bash \
@@ -121,6 +125,7 @@ fi
 
 # networking related tools, servers and clients
 if [ "$INSTALL_PACKAGE_GROUP_NETWORKING_TOOLS" -eq 1 ]; then
+    echo Installing package group: networking
     dnf -y install \
         bind-utils \
         bridge-utils \
@@ -161,6 +166,7 @@ fi
 
 # packages related to development
 if [ "$INSTALL_PACKAGE_GROUP_DEVELOPMENT" -eq 1 ]; then
+    echo Installing package group: development
     dnf -y install \
         autoconf \
         automake \
@@ -208,6 +214,7 @@ fi
 
 # Remove garbage
 if [ "$REMOVE_CRUFT_PACKAGES" -eq 1 ]; then
+    echo Removing unneeded packages
     dnf remove -y \
         open-vm-tools \
         polkit \
@@ -218,30 +225,42 @@ fi
 
 # Stop and disable firewalld
 if [ "$DISABLE_FIREWALLD" -eq 1 ]; then
+    echo Disabling firewalld service
     systemctl stop firewalld
     systemctl disable firewalld
 fi
 
 # Change installonly_limit
 if [ "$CHANGE_DNF_SETTINGS" -eq 1 ]; then
+    echo Setting up DNF options
     sed -i.bak -e '/^installonly_limit=/c installonly_limit=2' /etc/dnf/dnf.conf
 fi
 
 # change SELinux mode to permissive
 if [ "$CHANGE_SELINUX_TO_PERMISSIVE" -eq 1 ]; then
+    echo Setting SELinux to Permissive mode
     sed -i.bak -e '/^SELINUX=/c SELINUX=permissive' /etc/selinux/config
     setenforce permissive
 fi
 
 # Setup containers dirs and templates
 if [ "$SETUP_CONTAINERS" -eq 1 ]; then
+    echo Setting up container templates and mounts
     if [ ! -d /var/lib/machines/f30-base ]; then
         dnf -y install --releasever=30 --installroot=/var/lib/machines/f30-base --disablerepo="*" --enablerepo=fedora,updates fedora-release systemd dnf passwd vim-minimal
-        # echo >> /etc/fstab
-        # echo '# overlay filesystems for containers in /var/lib/machines' >> /etc/fstab
-        # echo 'overlay /var/lib/machines/mysql overlay noauto,lowerdir=/var/lib/machines/f30-base,upperdir=/var/lib/machines/mysql,workdir=/var/lib/machines/.workdir/mysql 0 0' >> /etc/fstab
+        echo >> /etc/fstab
+        echo '# overlay filesystems for containers in /var/lib/machines' >> /etc/fstab
+        echo '# overlay /var/lib/machines/mysql overlay noauto,lowerdir=/var/lib/machines/f30-base,upperdir=/var/lib/machines/mysql,workdir=/var/lib/machines/.workdir/mysql 0 0' >> /etc/fstab
     fi
 fi
 
-# install kernel-debuginfo
-# dnf -y debuginfo-install kernel-debuginfo
+if [ "$CHANGE_SHELL" -eq 1 ]; then
+    echo Changing loging shells
+    chsh ipozgaj --shell /bin/zsh
+fi
+
+# install various debuginfo
+if [ "$INSTALL_DEBUGINFO" -eq 1 ]; then
+    echo Installing debuginfo packages
+    dnf -y debuginfo-install kernel-debuginfo
+fi
