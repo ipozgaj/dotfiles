@@ -31,6 +31,7 @@ if [ "$INSTALL_PACKAGE_GROUP_ADMIN_TOOLS" -eq 1 ]; then
         coreutils \
         cpio \
         cpuid \
+        dar \
         debootstrap \
         device-mapper \
         dmidecode \
