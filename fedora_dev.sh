@@ -230,10 +230,11 @@ if [ "$DISABLE_FIREWALLD" -eq 1 ]; then
     systemctl disable firewalld
 fi
 
-# Change installonly_limit
+# Change DNF settings
 if [ "$CHANGE_DNF_SETTINGS" -eq 1 ]; then
     echo Setting up DNF options
     sed -i.bak -e '/^installonly_limit=/c installonly_limit=2' /etc/dnf/dnf.conf
+    sed -i.bak2 -e '$amax_parallel_downloads=8' /etc/dnf/dnf.conf
 fi
 
 # change SELinux mode to permissive
