@@ -40,6 +40,7 @@ if [ "$INSTALL_PACKAGE_GROUP_ADMIN_TOOLS" -eq 1 ]; then
         hostname \
         htop \
         iotop \
+        kernel-tools \
         libcap-ng-utils \
         libcgroup-tools \
         logrotate \
@@ -55,6 +56,7 @@ if [ "$INSTALL_PACKAGE_GROUP_ADMIN_TOOLS" -eq 1 ]; then
         perf \
         policycoreutils \
         policycoreutils-python-utils \
+        powertop \
         procps-ng \
         psacct \
         psmisc \
