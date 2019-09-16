@@ -39,6 +39,7 @@ if [ "$INSTALL_PACKAGE_GROUP_ADMIN_TOOLS" -eq 1 ]; then
         hdparm \
         hostname \
         htop \
+        hwinfo \
         iotop \
         kernel-tools \
         libcap-ng-utils \
