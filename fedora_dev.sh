@@ -251,11 +251,8 @@ fi
 # Setup containers dirs and templates
 if [ "$SETUP_CONTAINERS" -eq 1 ]; then
     echo Setting up container templates and mounts
-    if [ ! -d /var/lib/machines/f30-base ]; then
-        dnf -y install --releasever=30 --installroot=/var/lib/machines/f30-base --disablerepo="*" --enablerepo=fedora,updates fedora-release systemd dnf passwd vim-minimal
-        echo >> /etc/fstab
-        echo '# overlay filesystems for containers in /var/lib/machines' >> /etc/fstab
-        echo '# overlay /var/lib/machines/mysql overlay noauto,lowerdir=/var/lib/machines/f30-base,upperdir=/var/lib/machines/mysql,workdir=/var/lib/machines/.workdir/mysql 0 0' >> /etc/fstab
+    if [ ! -d /var/lib/machines/f31-base ]; then
+        dnf -y install --releasever=31 --installroot=/var/lib/machines/f31-base --disablerepo="*" --enablerepo=fedora,updates fedora-release systemd dnf passwd vim-minimal procps-ng iprout
     fi
 fi
 
