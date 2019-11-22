@@ -251,7 +251,7 @@ fi
 if [ "$SETUP_CONTAINERS" -eq 1 ]; then
     echo Setting up container templates and mounts
     if [ ! -d /var/lib/machines/f31-base ]; then
-        dnf -y install --releasever=31 --installroot=/var/lib/machines/f31-base --disablerepo="*" --enablerepo=fedora,updates fedora-release systemd dnf passwd vim-minimal procps-ng iprout
+        dnf -y install --releasever=31 --installroot=/var/lib/machines/f31-base --disablerepo="*" --enablerepo=fedora,updates fedora-release systemd dnf passwd vim-minimal procps-ng iproute
     fi
 fi
 
