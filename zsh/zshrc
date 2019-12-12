@@ -247,9 +247,14 @@ setopt hist_verify				# do not execute history expansion, load it only
 setopt inc_append_history		# write entries to history files incrementaly
 setopt interactive_comments		# allow comments in interractive shells
 setopt mail_warning				# warn if mail file was accessed from last login
+setopt multios                  # allow multiple redirections
 setopt no_beep					# prevent beeps
 setopt no_null_glob				# prevent expanding of non matched globs to *
 setopt pushd_ignore_dups		# do not place duplicates on directory stack
+
+# situational options that I don't want to be enabled all the time
+# setopt printexitvalue         # print the value of $? if it's not zero
+# setopt shwordsplit            # automatically splits multi-word strings into fields, like sh/bash
 
 # load custom functions
 autoload -U src                 # recompile and source zshrc
