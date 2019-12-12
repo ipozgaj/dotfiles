@@ -1,6 +1,6 @@
 # zshrc
 # (C) Igor Pozgaj <ipozgaj@gmail.com>
-# vim: ts=8
+# vim: noexpandtab ts=4
 
 # set paths
 path=($path /bin /usr/bin /usr/local/bin $HOME/bin)
@@ -20,26 +20,26 @@ typeset -Ug path manpath cdpath fpath
 umask 022
 
 # set limits
-unlimit			# user hard limits
+unlimit				# user hard limits
 limit core 0		# no core dumps
 limit maxproc 5000	# limit number of processes
-limit -s		# use limits for this and child shells
+limit -s			# use limits for this and child shells
 
 # set emacs key bindings
 bindkey -e
 
 # common key bindings
 bindkey "^U" backward-kill-line         # make CTRL-U behave like in bash
-bindkey "^[[2~" yank			# Insert
-bindkey "^[[3~" delete-char		# Delete
-bindkey "^[[5~" up-line-or-history	# Page Up
+bindkey "^[[2~" yank					# Insert
+bindkey "^[[3~" delete-char				# Delete
+bindkey "^[[5~" up-line-or-history		# Page Up
 bindkey "^[[6~" down-line-or-history	# Page Down
-bindkey "^[[7~" beginning-of-line	# Home
-bindkey "^[[8~" end-of-line		# End
-bindkey "^[[A" up-line-or-search	# back-history-search on up arrow
-bindkey "^[[B" down-line-or-search	# fwd-history-search on down arrow
-bindkey "^[e" expand-cmd-path		# expand command name on C-e
-bindkey " " magic-space			# history expansion on space
+bindkey "^[[7~" beginning-of-line		# Home
+bindkey "^[[8~" end-of-line				# End
+bindkey "^[[A" up-line-or-search		# back-history-search on up arrow
+bindkey "^[[B" down-line-or-search		# fwd-history-search on down arrow
+bindkey "^[e" expand-cmd-path			# expand command name on C-e
+bindkey " " magic-space					# history expansion on space
 
 # open the current command line in $EDITOR
 autoload -U edit-command-line
@@ -58,7 +58,7 @@ zle -N insert-files
 bindkey "^Xf" insert-files
 
 # set shell history options
-HISTFILE=$HOME/.zhistory
+HISTFILE=$HOME/.zhistory	# history file location
 SAVEHIST=20000				# history file size
 HISTSIZE=10000				# internal history list size
 
@@ -74,15 +74,8 @@ watch=(notme)
 LOGCHECK=60
 WATCHFMT='%n %a %l from %m at %t.'
 
-# set prompt (red for root, cyan otherwise, format: user@machine:cwd)
-autoload -U colors && colors
-# set prompt (red for root, cyan otherwise, format: user@machine:cwd)
-autoload -U colors && colors
-if ((EUID==0)); then
-    PROMPT="%{$fg[red]%}%n@%m%{$fg_bold[yellow]%}:%{$fg_bold[red]%}%1~%{$reset_color%}%{$fg[yellow]%}%#%{$reset_color%} "
-else
-    PROMPT="%{$fg[cyan]%}%n@%m%{$fg_bold[yellow]%}:%{$fg_bold[cyan]%}%1~%{$reset_color%}%{$fg[yellow]%}%#%{$reset_color%} "
-fi
+# set prompt
+PROMPT='%(!.%F{red}.%F{cyan})%n@%m %B%~%f%F{yellow} %#%f%b '
 
 # don't ask 'do you wish to see all XX possibilities' before menu selection
 LISTPROMPT=''
@@ -144,29 +137,30 @@ if ((EUID==0)); then
 	alias mv='mv -i'
 fi
 
-# csh compatibility
-setenv() {
-	typeset -x "${1}${1:+=}${(@)argv[2,$#]}"
-}
-
-# auto logout after 30 idle minutes, unless on X
-TMOUT=1800
+# auto logout after 30 idle minutes if we're not in X,
+# otherwise we rely on the desktop environment to lock the screen
 case $TERM in
-	*xterm*|screen*|rxvt|(dt|k|E|a)term)
-		unset TMOUT
-		;;
+    linux)
+        TMOUT=1800
+        ;;
+    *)
+        unset TMOUT
+        ;;
 esac
 
-# display title on X *term (user@host: cmd)
+# set terminal title if we're in X (user@host: cmd)
 case $TERM in
-	*xterm*|rxvt|(dt|k|E|a)term)
-		precmd() {
-			print -rn $'\e]0;'"${USER}@${HOST}"$'\a'
-		}
-		preexec() {
-			print -rn $'\e]0;'"${USER}@${HOST}: ${(V)1}"$'\a'
-		}
-		;;
+		linux)
+			;;
+
+        *)
+			precmd() {
+				print -rn $'\e]0;'"${USER}@${HOST}"$'\a'
+			}
+			preexec() {
+				print -rn $'\e]0;'"${USER}@${HOST}: ${(V)1}"$'\a'
+			}
+			;;
 esac
 
 # export some common variables
@@ -236,26 +230,26 @@ my_accounts=(ipozgaj@localhost root@localhost)
 zstyle ':completion:*:my-accounts' users-hosts $my_accounts
 
 # various shell options
-setopt always_to_end		# when completing from middle, move to end
-setopt auto_cd			# chdir to directory if we type its name only
-setopt auto_pushd		# put directory on dir stack after chdir
-setopt correct			# correct misspelled commands
-setopt extended_glob		# set extended globing
+setopt always_to_end			# when completing from middle, move to end
+setopt auto_cd					# chdir to directory if we type its name only
+setopt auto_pushd				# put directory on dir stack after chdir
+setopt correct					# correct misspelled commands
+setopt extended_glob			# set extended globing
 setopt extended_history         # save timestamps and elapsed time in history file
-setopt glob_complete		# do not expand globs to list of matched files, use completion
-setopt hist_expire_dups_first   # when trimming history, remove oldest duplicates first
-setopt hist_find_no_dups	# do not show duplicates on history-find
-setopt hist_ignore_all_dups     # ignore duplicates in history file
-setopt hist_ignore_space        # do not save commands starting with space
-setopt hist_reduce_blanks	# remove superfluous blanks from history file
-setopt hist_no_functions        # do not store function definitions
-setopt hist_verify		# do not execute history expansion, load it only
-setopt inc_append_history	# write entries to history files incrementaly
-setopt interactive_comments     # allow comments in interractive shells
-setopt mail_warning		# warn if mail file was accessed from last login
-setopt no_beep			# prevent beeps
-setopt no_null_glob		# prevent expanding of non matched globs to *
-setopt pushd_ignore_dups	# do not place duplicates on directory stack
+setopt glob_complete			# do not expand globs to list of matched files, use completion
+setopt hist_expire_dups_first	# when trimming history, remove oldest duplicates first
+setopt hist_find_no_dups		# do not show duplicates on history-find
+setopt hist_ignore_all_dups		# ignore duplicates in history file
+setopt hist_ignore_space		# do not save commands starting with space
+setopt hist_reduce_blanks		# remove superfluous blanks from history file
+setopt hist_no_functions		# do not store function definitions
+setopt hist_verify				# do not execute history expansion, load it only
+setopt inc_append_history		# write entries to history files incrementaly
+setopt interactive_comments		# allow comments in interractive shells
+setopt mail_warning				# warn if mail file was accessed from last login
+setopt no_beep					# prevent beeps
+setopt no_null_glob				# prevent expanding of non matched globs to *
+setopt pushd_ignore_dups		# do not place duplicates on directory stack
 
 # load custom functions
 autoload -U src                 # recompile and source zshrc
