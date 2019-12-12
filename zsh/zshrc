@@ -75,7 +75,7 @@ LOGCHECK=60
 WATCHFMT='%n %a %l from %m at %t.'
 
 # set prompt
-PROMPT='%(!.%F{red}.%F{cyan})%n@%m %B%~%f%F{yellow} %#%f%b '
+PROMPT='%(!.%F{red}.%F{cyan})%n@%m %B%(6~|.../%5~|%~)%f%F{yellow} %#%f%b '
 
 # don't ask 'do you wish to see all XX possibilities' before menu selection
 LISTPROMPT=''
