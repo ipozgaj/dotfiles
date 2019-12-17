@@ -173,6 +173,7 @@ if [ "$INSTALL_PACKAGE_GROUP_DEVELOPMENT" -eq 1 ]; then
     dnf -y install \
         autoconf \
         automake \
+        cargo \
         binutils \
         bison \
         cmake \
@@ -184,6 +185,7 @@ if [ "$INSTALL_PACKAGE_GROUP_DEVELOPMENT" -eq 1 ]; then
         gcc \
         gcc-c++ \
         gdb \
+        ghc \
         git \
         glibc-devel \
         glibc-headers \
@@ -210,6 +212,7 @@ if [ "$INSTALL_PACKAGE_GROUP_DEVELOPMENT" -eq 1 ]; then
         python3-scrapy \
         python3-seaborn \
         python3-sympy \
+        rust \
         ShellCheck \
         splint \
         valgrind
