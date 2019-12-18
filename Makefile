@@ -10,8 +10,8 @@ install: \
 	install-bin
 
 install-dirs:
-	mkdir -m 0700 Applications Desktop Documents Downloads Music Pictures Templates Videos
-	mkdir -m 0755 Public
+	mkdir -m 0700 ~/Applications ~/Documents ~/Downloads ~/Music ~/Pictures ~/Videos
+	mkdir -m 0755 ~/Public
 
 install-bin:
 	if [ -d ~/bin ]; then mv ~/bin{,.bak}; else mkdir ~/bin; fi
