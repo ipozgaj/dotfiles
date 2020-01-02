@@ -112,6 +112,7 @@ if [ "$INSTALL_PACKAGE_GROUP_UTILITIES" -eq 1 ]; then
         patch \
         pcre-tools \
         pv \
+        pwgen \
         recode \
         ripgrep \
         sed \
@@ -185,7 +186,6 @@ if [ "$INSTALL_PACKAGE_GROUP_DEVELOPMENT" -eq 1 ]; then
         gcc \
         gcc-c++ \
         gdb \
-        ghc \
         git \
         glibc-devel \
         glibc-headers \
