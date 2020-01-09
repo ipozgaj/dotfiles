@@ -177,6 +177,7 @@ if [ "$INSTALL_PACKAGE_GROUP_DEVELOPMENT" -eq 1 ]; then
         cargo \
         binutils \
         bison \
+        black \
         cmake \
         cpp \
         cppcheck \
@@ -197,9 +198,9 @@ if [ "$INSTALL_PACKAGE_GROUP_DEVELOPMENT" -eq 1 ]; then
         mercurial \
         nasm \
         perl \
-        pyflakes \
         python3 \
         python3-beautifulsoup4 \
+        python3-flake8 \
         python3-ipython \
         python3-matplotlib \
         python3-mypy \
