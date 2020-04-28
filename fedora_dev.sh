@@ -143,6 +143,7 @@ if [ "$INSTALL_PACKAGE_GROUP_NETWORKING_TOOLS" -eq 1 ]; then
         iftop \
         iproute \
         iproute-tc \
+        ipset \
         iptables \
         iptstate \
         iptraf-ng \
