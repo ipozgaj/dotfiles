@@ -1,5 +1,5 @@
 #!/bin/bash
-# based on Fedora 29 server minimal (net) install
+# based on Fedora 32 server minimal install
 
 set -ueo pipefail
 
@@ -215,6 +215,7 @@ if [ "$INSTALL_PACKAGE_GROUP_DEVELOPMENT" -eq 1 ]; then
         python3-seaborn \
         python3-sympy \
         rust \
+        rustfmt \
         ShellCheck \
         splint \
         valgrind
