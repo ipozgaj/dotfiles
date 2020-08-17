@@ -119,6 +119,7 @@ if [ "$INSTALL_PACKAGE_GROUP_UTILITIES" -eq 1 ]; then
         sqlite \
         tmux \
         tree \
+        units \
         unzip \
         vim \
         weechat \
