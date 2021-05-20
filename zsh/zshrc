@@ -85,7 +85,7 @@ SPROMPT='zsh: correct '%R' to '%r' ? ([Y]es/[N]o/[E]dit/[A]bort) '
 
 # command aliases
 alias l='ls'
-alias ls='ls -F --color=auto'
+alias ls='ls -FN --color=auto'
 alias ll='ls -lh'
 alias la='ls -a'
 alias lla='ls -alh'
