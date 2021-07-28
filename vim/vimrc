@@ -71,6 +71,7 @@ let mapleader = "\\"
 nnoremap Y y$
 nnoremap Q @@
 vnoremap <leader>gb :<C-U>!git blame % -L<C-R>=line("'<") <CR>,<C-R>=line("'>") <CR><CR>
+nnoremap <leader>c :set colorcolumn=79 colorcolumn?<CR>
 nnoremap <leader>gb :!git blame %<CR>
 nnoremap <leader>hb :!hg annotate -dnu %<CR>
 nnoremap <leader>i :set ignorecase! ignorecase?<CR>
