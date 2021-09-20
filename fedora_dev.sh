@@ -1,5 +1,5 @@
 #!/bin/bash
-# based on Fedora 32 server minimal install
+# based on Fedora 34 server minimal install
 
 set -ueo pipefail
 
@@ -48,7 +48,6 @@ if [ "$INSTALL_PACKAGE_GROUP_ADMIN_TOOLS" -eq 1 ]; then
         ltrace \
         mdadm \
         numactl \
-        ntpdate \
         nvme-cli \
         parted \
         passwd \
@@ -258,7 +257,7 @@ fi
 if [ "$SETUP_CONTAINERS" -eq 1 ]; then
     echo Setting up container templates and mounts
     if [ ! -d /var/lib/machines/f31-base ]; then
-        dnf -y install --releasever=31 --installroot=/var/lib/machines/f31-base --disablerepo="*" --enablerepo=fedora,updates fedora-release systemd dnf passwd vim-minimal procps-ng iproute
+        dnf -y install --releasever=34 --installroot=/var/lib/machines/f31-base --disablerepo="*" --enablerepo=fedora,updates fedora-release systemd dnf passwd vim-minimal procps-ng iproute
     fi
 fi
 
