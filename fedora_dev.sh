@@ -141,6 +141,7 @@ if [ "$INSTALL_PACKAGE_GROUP_NETWORKING_TOOLS" -eq 1 ]; then
         ftp \
         hping3 \
         iftop \
+        iperf3 \
         iproute \
         iproute-tc \
         ipset \
