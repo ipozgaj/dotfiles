@@ -85,6 +85,7 @@ if [ "$INSTALL_PACKAGE_GROUP_UTILITIES" -eq 1 ]; then
         bc \
         bzip2 \
         colordiff \
+        datamash \
         diffutils \
         diffstat \
         entr \
