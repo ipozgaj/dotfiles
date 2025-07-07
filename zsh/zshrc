@@ -168,7 +168,7 @@ esac
 (( ${+VISUAL} )) || export VISUAL=$EDITOR
 
 # enable colors in less(1)
-export LESS=FRKX                          # see man less(1)
+export LESS=SXIFRs                        # see man less(1)
 export LESS_TERMCAP_mb=$'\E[01;31m'       # begin blinking-mode
 export LESS_TERMCAP_md=$'\E[01;38;5;74m'  # begin bold-mode
 export LESS_TERMCAP_me=$'\E[0m'           # end (blinking/bold)-mode
