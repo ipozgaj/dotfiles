@@ -110,7 +110,6 @@ if [ "$INSTALL_PACKAGE_GROUP_UTILITIES" -eq 1 ]; then
         openssl \
         parallel \
         patch \
-        pcre-tools \
         pv \
         pwgen \
         recode \
