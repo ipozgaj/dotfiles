@@ -123,6 +123,7 @@ if [ "$INSTALL_PACKAGE_GROUP_UTILITIES" -eq 1 ]; then
         vim \
         weechat \
         which \
+        yq \
         zip \
         zsh
 fi
