@@ -212,6 +212,7 @@ if [ "$INSTALL_PACKAGE_GROUP_DEVELOPMENT" -eq 1 ]; then
         python3-pandas \
         python3-requests \
         python3-scapy \
+        python3-scikit-learn \
         python3-scipy \
         python3-scrapy \
         python3-seaborn \
