@@ -265,7 +265,7 @@ if [ "$SETUP_CONTAINERS" -eq 1 ]; then
 fi
 
 if [ "$CHANGE_SHELL" -eq 1 ]; then
-    echo Changing loging shells
+    echo Changing login shells
     chsh ipozgaj --shell /bin/zsh
 fi
 
