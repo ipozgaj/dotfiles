@@ -38,7 +38,9 @@ bindkey "^[[7~" beginning-of-line		# Home
 bindkey "^[[8~" end-of-line				# End
 bindkey "^[[A" up-line-or-search		# back-history-search on up arrow
 bindkey "^[[B" down-line-or-search		# fwd-history-search on down arrow
-bindkey "^[e" expand-cmd-path			# expand command name on C-e
+bindkey "^E" expand-cmd-path			# expand command name on C-e
+bindkey "^[[1;3C" forward-word   		# Option+Right
+bindkey "^[[1;3D" backward-word  		# Option+Left
 bindkey " " magic-space					# history expansion on space
 
 # open the current command line in $EDITOR
