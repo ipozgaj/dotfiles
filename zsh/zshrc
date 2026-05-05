@@ -224,12 +224,12 @@ zstyle ':completion:*:my-accounts' users-hosts $my_accounts
 
 # various shell options
 setopt always_to_end			# when completing from middle, move to end
-setopt auto_cd					# chdir to directory if we type its name only
+setopt auto_cd					# cd to a dir just by typing its name
 setopt auto_pushd				# put directory on dir stack after chdir
 setopt correct					# correct misspelled commands
-setopt extended_glob			# set extended globing
+setopt extended_glob			# enable extended globing
 setopt extended_history         # save timestamps and elapsed time in history file
-setopt glob_complete			# do not expand globs to list of matched files, use completion
+setopt glob_complete			# complete globs instead of expanding them
 setopt hist_expire_dups_first	# when trimming history, remove oldest duplicates first
 setopt hist_find_no_dups		# do not show duplicates on history-find
 setopt hist_ignore_all_dups		# ignore duplicates in history file
@@ -243,6 +243,7 @@ setopt mail_warning				# warn if mail file was accessed from last login
 setopt multios                  # allow multiple redirections
 setopt no_beep					# prevent beeps
 setopt no_null_glob				# prevent expanding of non matched globs to *
+setopt no_share_history			# don't share history from multiple sessions in real time
 setopt pushd_ignore_dups		# do not place duplicates on directory stack
 
 # situational options that I don't want to be enabled all the time
