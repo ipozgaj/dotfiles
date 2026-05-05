@@ -29,21 +29,14 @@ limit -s			# use limits for this and child shells
 bindkey -e
 
 # common key bindings
-bindkey "^U" backward-kill-line         # make CTRL-U behave like in bash
-bindkey "^Xe" expand-cmd-path           # expand command path on C-x e
-bindkey "^[[2~" yank					# Insert
-bindkey "^[[3~" delete-char				# Delete
-bindkey "^[[5~" up-line-or-history		# Page Up
-bindkey "^[[6~" down-line-or-history	# Page Down
-bindkey "^[[7~" beginning-of-line		# Home
-bindkey "^[[8~" end-of-line				# End
+bindkey "^U" backward-kill-line         # make CTRL-u behave like in bash
 bindkey "^[[A" up-line-or-search		# back-history-search on up arrow
 bindkey "^[[B" down-line-or-search		# fwd-history-search on down arrow
 bindkey "^[[1;3C" forward-word   		# Option+Right
 bindkey "^[[1;3D" backward-word  		# Option+Left
 bindkey " " magic-space					# history expansion on space
 
-# open the current command line in $EDITOR
+# open the current command line in $EDITOR on C-x C-e
 autoload -U edit-command-line
 zle -N edit-command-line
 bindkey "^X^e" edit-command-line
