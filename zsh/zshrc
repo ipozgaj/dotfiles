@@ -226,6 +226,7 @@ zstyle ':completion:*:my-accounts' users-hosts $my_accounts
 setopt always_to_end			# when completing from middle, move to end
 setopt auto_cd					# cd to a dir just by typing its name
 setopt auto_pushd				# put directory on dir stack after chdir
+setopt complete_in_word         # completion works mid-word
 setopt correct					# correct misspelled commands
 setopt extended_glob			# enable extended globing
 setopt extended_history         # save timestamps and elapsed time in history file
@@ -235,13 +236,17 @@ setopt hist_find_no_dups		# do not show duplicates on history-find
 setopt hist_ignore_all_dups		# ignore duplicates in history file
 setopt hist_ignore_space		# do not save commands starting with space
 setopt hist_reduce_blanks		# remove superfluous blanks from history file
+setopt hist_save_no_dups        # don't write duplicate history entries to save file
 setopt hist_no_functions		# do not store function definitions
 setopt hist_verify				# do not execute history expansion, load it only
 setopt inc_append_history		# write entries to history files incrementaly
 setopt interactive_comments		# allow comments in interractive shells
+setopt long_list_jobs           # `jobs` (and finished job notification) shows PID by default
 setopt mail_warning				# warn if mail file was accessed from last login
 setopt multios                  # allow multiple redirections
+setopt notify                   # report bg-job status immediately, not at next prompt
 setopt no_beep					# prevent beeps
+setopt no_flow_control          # don't use Ctrl-S / Ctrl-Q
 setopt no_null_glob				# prevent expanding of non matched globs to *
 setopt no_share_history			# don't share history from multiple sessions in real time
 setopt pushd_ignore_dups		# do not place duplicates on directory stack
