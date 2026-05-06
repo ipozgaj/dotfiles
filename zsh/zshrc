@@ -66,7 +66,7 @@ HISTSIZE=100000				# internal history list size
 DIRSTACKSIZE=20
 
 # set mail options
-MAIL=/var/mail/$USERNAME
+MAIL=/var/mail/$USER
 MAILCHECK=60
 
 # report login/logout events of all except ourself, once in every minute
@@ -96,7 +96,7 @@ alias pa='ps auxf'
 alias h='history -fD -20'
 alias quit='exit'
 alias vi='vim'
-alias grep='grep --color'
+alias grep='grep --color=auto'
 alias d="dirs -v"
 alias 0="cd +0"
 alias 1="cd +1"
@@ -117,13 +117,6 @@ alias -g .....='../../../..'
 # sufix aliases
 alias -s log="less"
 alias -s json="jq ."
-alias -s xml="xmllint --format"
-alias -s git="git clone"
-alias -s gz="gzip -l"
-alias -s zip="unzip -l"
-alias -s tar="tar tvf"
-alias -s tgz="tar tvzf"
-alias -s tbz2="tar tvjf"
 alias -s cert="openssl x509 -noout -text -in"
 alias -s pem="openssl x509 -noout -text -in"
 alias -s der="openssl x509 -inform der -noout -text -in"
@@ -138,7 +131,7 @@ fi
 # auto logout after 30 idle minutes if we're not in X,
 # otherwise we rely on the desktop environment to lock the screen
 case $TERM in
-    linux)
+	linux)
         TMOUT=1800
         ;;
     *)
@@ -148,23 +141,23 @@ esac
 
 # set terminal title if we're in X (user@host: cmd)
 case $TERM in
-		linux)
-			;;
+	linux)
+		;;
 
-        *)
-			precmd() {
-				print -rn $'\e]0;'"${USER}@${HOST}"$'\a'
-			}
-			preexec() {
-				print -rn $'\e]0;'"${USER}@${HOST}: ${(V)1}"$'\a'
-			}
-			;;
+    *)
+		precmd() {
+			print -rn $'\e]0;'"${USER}@${HOST}"$'\a'
+		}
+		preexec() {
+			print -rn $'\e]0;'"${USER}@${HOST}: ${(V)1}"$'\a'
+		}
+		;;
 esac
 
 # export some common variables
 (( ${+TERM} )) || export TERM='vt100'
-(( ${+PAGER} )) || export PAGER=$(which less)
-(( ${+EDITOR} )) || export EDITOR=$(which vim)
+(( ${+PAGER} )) || export PAGER=less
+(( ${+EDITOR} )) || export EDITOR=vim
 (( ${+VISUAL} )) || export VISUAL=$EDITOR
 
 # enable colors in less(1)
@@ -179,17 +172,25 @@ export LESS_TERMCAP_ue=$'\E[0m'           # end underline
 
 # customize ls colors
 case $(uname) in
-    Darwin)
-        export CLICOLOR=1
-        export LSCOLORS=ExFxCxDxBxegedabagacad
-        ;;
-    Linux)
-        eval $(dircolors -b)
-        ;;
+	Darwin)
+		export CLICOLOR=1
+		export LSCOLORS=ExFxCxDxBxegedabagacad
+		;;
+	Linux)
+		eval $(dircolors -b)
+		;;
 esac
 
 # setup completion
-autoload -U compinit && compinit
+autoload -U compinit
+
+# only run full security check once a day
+if [[ -n ~/.zcompdump(#qN.mh+24) ]]; then
+	compinit
+else
+	compinit -C
+fi
+
 zmodload -i zsh/complist
 
 # set completion options
@@ -213,20 +214,8 @@ zstyle ':completion:*:*:kill:*:processes' list-colors '=(#b) #([0-9]#)*=0=01;31'
 zstyle -e ':completion:*:approximate:*' max-errors 'reply=( $(( ($#PREFIX+$#SUFFIX)/3 )) numeric )'
 zstyle ':completion:*' rehash true
 
-# generic completions for programs which understand GNU long options(--help)
-compdef _gnu_generic make df du
-
-# common usernames
-users=(ipozgaj root)
-zstyle ':completion:*' users $users
-
-# common hostnames
-hosts=(localhost)
-zstyle ':completion:*' hosts $hosts
-
-# (user,host) pairs
-my_accounts=(ipozgaj@localhost root@localhost)
-zstyle ':completion:*:my-accounts' users-hosts $my_accounts
+# make complation for some commands work properly
+compdef _gnu_generic df
 
 # various shell options
 setopt always_to_end			# when completing from middle, move to end
@@ -236,6 +225,7 @@ setopt complete_in_word         # completion works mid-word
 setopt correct					# correct misspelled commands
 setopt extended_glob			# enable extended globing
 setopt extended_history         # save timestamps and elapsed time in history file
+
 setopt glob_complete			# complete globs instead of expanding them
 setopt hist_expire_dups_first	# when trimming history, remove oldest duplicates first
 setopt hist_find_no_dups		# do not show duplicates on history-find
