@@ -83,6 +83,9 @@ LISTPROMPT=''
 # spelling prompt
 SPROMPT='zsh: correct '%R' to '%r' ? ([Y]es/[N]o/[E]dit/[A]bort) '
 
+# nicer output from time
+TIMEFMT=$'\n%J\n  %*E real  %*U user  %*S sys  %P cpu'
+
 # command aliases
 alias l='ls'
 alias ls='ls -FN --color=auto'
