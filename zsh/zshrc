@@ -49,13 +49,13 @@ bindkey "^X^e" edit-command-line
 # allows incremental completion of a word
 autoload -U incremental-complete-word
 zle -N incremental-complete-word
-bindkey "^Xi" incremental-complete-word
+bindkey "^X^i" incremental-complete-word
 
 # allows typing a file pattern and shows the result of the expansion at each step
 # if <CR> is hit, all the expansions are inserted into the command line
 autoload -U insert-files
 zle -N insert-files
-bindkey "^Xf" insert-files
+bindkey "^X^f" insert-files
 
 # set shell history options
 HISTFILE=$HOME/.zhistory	# history file location
