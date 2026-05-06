@@ -186,7 +186,7 @@ autoload -U compinit
 
 # only run full security check once a day
 if [[ -n ~/.zcompdump(#qN.mh+24) ]]; then
-	compinit
+	compinit -i
 else
 	compinit -C
 fi
