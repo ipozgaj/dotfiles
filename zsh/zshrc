@@ -214,7 +214,7 @@ zstyle ':completion:*:*:kill:*:processes' list-colors '=(#b) #([0-9]#)*=0=01;31'
 zstyle -e ':completion:*:approximate:*' max-errors 'reply=( $(( ($#PREFIX+$#SUFFIX)/3 )) numeric )'
 zstyle ':completion:*' rehash true
 
-# make complation for some commands work properly
+# make completion for some commands work properly
 compdef _gnu_generic df
 
 # various shell options
@@ -225,9 +225,9 @@ setopt complete_in_word         # completion works mid-word
 setopt correct					# correct misspelled commands
 setopt extended_glob			# enable extended globing
 setopt extended_history         # save timestamps and elapsed time in history file
-
 setopt glob_complete			# complete globs instead of expanding them
 setopt hist_expire_dups_first	# when trimming history, remove oldest duplicates first
+setopt hist_fcntl_lock          # extra safety regarding concurrent save file updates
 setopt hist_find_no_dups		# do not show duplicates on history-find
 setopt hist_ignore_all_dups		# ignore duplicates in history file
 setopt hist_ignore_space		# do not save commands starting with space
