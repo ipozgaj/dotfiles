@@ -113,8 +113,13 @@ alias 9="cd +9"
 alias -g ...='../..'
 alias -g ....='../../..'
 alias -g .....='../../../..'
+alias -g L='| less'
+alias -g G='| grep'
+alias -g H='| head'
+alias -g T='| tail'
+alias -g NUL='> /dev/null 2>&1'
 
-# sufix aliases
+# suffix aliases
 alias -s log="less"
 alias -s json="jq ."
 alias -s cert="openssl x509 -noout -text -in"
