@@ -22,7 +22,7 @@ umask 022
 # set limits
 unlimit				# user hard limits
 limit core 0		# no core dumps
-limit maxproc 10000	# limit number of threads
+limit maxproc 20000	# limit number of threads
 limit -s			# use limits for this and child shells
 
 # set emacs key bindings
@@ -125,6 +125,9 @@ alias -s json="jq ."
 alias -s cert="openssl x509 -noout -text -in"
 alias -s pem="openssl x509 -noout -text -in"
 alias -s der="openssl x509 -inform der -noout -text -in"
+
+# custom functions
+mkcd() { mkdir -p "$1" && cd "$1"; }
 
 # extra safety for root
 if ((EUID==0)); then
